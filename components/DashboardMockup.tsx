@@ -8,7 +8,7 @@ export default function DashboardMockup() {
         className="glow-orb -inset-6 bg-gradient-to-br from-primary/20 via-accent/10 to-transparent"
         aria-hidden="true"
       />
-      <div className="relative w-full rounded-2xl border border-white/10 bg-surface-elevated p-5 shadow-glow-primary">
+      <div className="relative w-full rounded-2xl border border-white/10 bg-surface-elevated p-5 shadow-glow-primary transition-transform duration-300 hover:scale-[1.02]">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
           Owner Dashboard
         </p>
@@ -30,7 +30,7 @@ export default function DashboardMockup() {
         </div>
       </div>
 
-      <div className="relative hidden w-40 shrink-0 rounded-2xl border border-white/10 bg-gradient-to-br from-primary to-primary-dark p-4 text-white shadow-glow sm:block">
+      <div className="relative hidden w-40 shrink-0 rounded-2xl border border-white/10 bg-gradient-to-br from-primary to-primary-dark p-4 text-white shadow-glow transition-transform duration-300 hover:scale-[1.03] sm:block">
         <Smartphone className="h-5 w-5 text-white/80" aria-hidden="true" />
         <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-white/70">
           Tenant App

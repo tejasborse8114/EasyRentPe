@@ -6,6 +6,15 @@ export const PLAY_STORE_URL =
 // TODO: replace with the live App Store listing URL once published.
 export const APP_STORE_URL = "https://play.google.com/store/apps/details?id=com.easyrentpe.hostel_management_app";
 
+export const WHATSAPP_NUMBER = "919175232737";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hi Easy RentPe, I'd like to know more about your platform."
+)}`;
+
+export const SUPPORT_EMAIL = "support@easyrentpe.com";
+export const SUPPORT_PHONE_DISPLAY = "+91 91752 32737";
+export const SUPPORT_PHONE_TEL = "+919175232737";
+
 export type NavLink = {
   href: string;
   label: string;

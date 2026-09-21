@@ -28,6 +28,7 @@ type DemoFormValues = z.infer<typeof demoFormSchema>;
 
 export default function DemoForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -38,10 +39,19 @@ export default function DemoForm() {
     defaultValues: { propertyType: "hostel" },
   });
 
-  // Placeholder submit handler — wire this up to a real backend/CRM endpoint later.
   const onSubmit = async (data: DemoFormValues) => {
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    console.log("Demo request submitted:", data);
+    setSubmitError(null);
+    const response = await fetch("/api/demo-request", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      setSubmitError("Something went wrong sending your request. Please try again or call us directly.");
+      return;
+    }
+
     setSubmitted(true);
     reset();
   };
@@ -202,6 +212,11 @@ export default function DemoForm() {
         {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
         Request a Demo
       </button>
+      {submitError && (
+        <p role="alert" className="text-sm text-red-400">
+          {submitError}
+        </p>
+      )}
     </form>
   );
 }

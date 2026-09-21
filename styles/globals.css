@@ -8,7 +8,12 @@
   }
 
   body {
-    @apply bg-surface text-ink antialiased;
+    @apply relative bg-surface bg-grid-pattern bg-[length:44px_44px] bg-center text-ink antialiased;
+  }
+
+  body::before {
+    content: "";
+    @apply pointer-events-none fixed inset-0 z-0 bg-noise opacity-[0.035];
   }
 
   ::selection {
@@ -26,11 +31,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-dark px-6 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-dark;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-accent to-accent-dark px-6 py-3 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-lg active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-dark;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-surface-elevated px-6 py-3 text-sm font-semibold text-primary shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-surface-elevated px-6 py-3 text-sm font-semibold text-primary shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:border-primary/40 hover:bg-primary/10 active:scale-[0.97];
   }
 
   .section {
@@ -38,7 +43,7 @@
   }
 
   .card {
-    @apply rounded-2xl border border-white/10 bg-surface-elevated p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-soft;
+    @apply rounded-2xl border border-white/10 bg-surface-elevated p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-soft;
   }
 
   .eyebrow {
@@ -46,10 +51,10 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent;
+    @apply animate-gradient-x bg-[length:200%_auto] bg-gradient-to-r from-primary via-primary-light to-primary bg-clip-text text-transparent;
   }
 
   .glow-orb {
-    @apply pointer-events-none absolute rounded-full blur-3xl;
+    @apply pointer-events-none absolute animate-pulse-glow rounded-full blur-3xl;
   }
 }

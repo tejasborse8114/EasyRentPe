@@ -13,7 +13,7 @@ export default function MiniAppMockup({ title, rows }: { title: string; rows: Ro
         className="glow-orb -inset-4 bg-gradient-to-br from-primary/15 via-accent/10 to-transparent"
         aria-hidden="true"
       />
-      <div className="relative rounded-2xl border border-white/10 bg-surface-elevated p-5 shadow-glow-primary">
+      <div className="relative rounded-2xl border border-white/10 bg-surface-elevated p-5 shadow-glow-primary transition-transform duration-300 hover:scale-[1.02]">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">{title}</p>
         <div className="mt-4 space-y-3">
           {rows.map(({ icon: Icon, label }) => (

@@ -18,8 +18,10 @@ export default function FeatureCard({
 }: FeatureCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 24, scale: 0.92 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      whileHover={{ scale: 1.03, y: -4 }}
+      whileTap={{ scale: 0.98 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: Math.min(index * 0.06, 0.3) }}
       className="card h-full"
