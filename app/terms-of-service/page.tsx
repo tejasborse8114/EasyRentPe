@@ -66,7 +66,7 @@ export default function TermsOfServicePage() {
             configurable grace period.
           </li>
           <li>
-            Plan features (Starter, Growth, Enterprise) are as described on the{" "}
+            Plan features (Growth, Enterprise) are as described on the{" "}
             <a href="/pricing" className="font-medium text-primary underline">
               Pricing page
             </a>{" "}

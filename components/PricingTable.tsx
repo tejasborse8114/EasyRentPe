@@ -7,7 +7,7 @@ import type { PricingPlan } from "@/lib/content";
 
 export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+    <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 sm:max-w-2xl">
       {plans.map((plan, index) => (
         <motion.div
           key={plan.name}
