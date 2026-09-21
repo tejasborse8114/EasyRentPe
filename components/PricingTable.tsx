@@ -13,7 +13,7 @@ export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
           }`}
         >
           {plan.highlighted && (
-            <span className="mb-3 inline-block w-fit rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
+            <span className="mb-3 inline-block w-fit rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
               Most popular
             </span>
           )}

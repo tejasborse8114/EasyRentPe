@@ -75,11 +75,11 @@ export default function DemoForm() {
             autoComplete="name"
             aria-invalid={!!errors.fullName}
             aria-describedby={errors.fullName ? "fullName-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("fullName")}
           />
           {errors.fullName && (
-            <p id="fullName-error" role="alert" className="mt-1.5 text-xs text-red-600">
+            <p id="fullName-error" role="alert" className="mt-1.5 text-xs text-red-400">
               {errors.fullName.message}
             </p>
           )}
@@ -95,11 +95,11 @@ export default function DemoForm() {
             autoComplete="tel"
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("phone")}
           />
           {errors.phone && (
-            <p id="phone-error" role="alert" className="mt-1.5 text-xs text-red-600">
+            <p id="phone-error" role="alert" className="mt-1.5 text-xs text-red-400">
               {errors.phone.message}
             </p>
           )}
@@ -116,11 +116,11 @@ export default function DemoForm() {
           autoComplete="email"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? "email-error" : undefined}
-          className="mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           {...register("email")}
         />
         {errors.email && (
-          <p id="email-error" role="alert" className="mt-1.5 text-xs text-red-600">
+          <p id="email-error" role="alert" className="mt-1.5 text-xs text-red-400">
             {errors.email.message}
           </p>
         )}
@@ -136,11 +136,11 @@ export default function DemoForm() {
             type="text"
             aria-invalid={!!errors.propertyName}
             aria-describedby={errors.propertyName ? "propertyName-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("propertyName")}
           />
           {errors.propertyName && (
-            <p id="propertyName-error" role="alert" className="mt-1.5 text-xs text-red-600">
+            <p id="propertyName-error" role="alert" className="mt-1.5 text-xs text-red-400">
               {errors.propertyName.message}
             </p>
           )}
@@ -156,11 +156,11 @@ export default function DemoForm() {
             min={1}
             aria-invalid={!!errors.numberOfBeds}
             aria-describedby={errors.numberOfBeds ? "numberOfBeds-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("numberOfBeds")}
           />
           {errors.numberOfBeds && (
-            <p id="numberOfBeds-error" role="alert" className="mt-1.5 text-xs text-red-600">
+            <p id="numberOfBeds-error" role="alert" className="mt-1.5 text-xs text-red-400">
               {errors.numberOfBeds.message}
             </p>
           )}
@@ -180,7 +180,7 @@ export default function DemoForm() {
           </label>
         </div>
         {errors.propertyType && (
-          <p role="alert" className="mt-1.5 text-xs text-red-600">
+          <p role="alert" className="mt-1.5 text-xs text-red-400">
             {errors.propertyType.message}
           </p>
         )}
@@ -193,7 +193,7 @@ export default function DemoForm() {
         <textarea
           id="message"
           rows={4}
-          className="mt-1.5 w-full rounded-xl border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           {...register("message")}
         />
       </div>

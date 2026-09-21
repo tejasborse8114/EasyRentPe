@@ -8,7 +8,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
+    <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-surface-elevated">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         const panelId = `faq-panel-${index}`;

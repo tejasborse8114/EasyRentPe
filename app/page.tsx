@@ -63,7 +63,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-surface-elevated">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Everything you need</p>
