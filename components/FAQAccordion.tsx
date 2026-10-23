@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import type { FAQItem } from "@/lib/content";
 
@@ -8,7 +9,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-black/5 rounded-2xl border border-black/5 bg-white">
+    <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-surface-elevated">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         const panelId = `faq-panel-${index}`;
@@ -38,9 +39,20 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              className={isOpen ? "px-5 pb-5" : "hidden"}
+              className="overflow-hidden"
             >
-              <p className="text-sm leading-relaxed text-ink-muted">{item.answer}</p>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  >
+                    <p className="px-5 pb-5 text-sm leading-relaxed text-ink-muted">{item.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         );

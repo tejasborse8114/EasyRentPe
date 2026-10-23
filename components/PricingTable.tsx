@@ -1,19 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import type { PricingPlan } from "@/lib/content";
 
 export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-      {plans.map((plan) => (
-        <div
+    <div className="mx-auto grid grid-cols-1 gap-6 sm:grid-cols-2 sm:max-w-2xl">
+      {plans.map((plan, index) => (
+        <motion.div
           key={plan.name}
+          initial={{ opacity: 0, scale: 0.9, y: 16 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
           className={`card flex h-full flex-col ${
             plan.highlighted ? "scale-[1.02] border-2 border-accent shadow-glow" : ""
           }`}
         >
           {plan.highlighted && (
-            <span className="mb-3 inline-block w-fit rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-dark">
+            <span className="mb-3 inline-block w-fit rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
               Most popular
             </span>
           )}
@@ -35,7 +42,7 @@ export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
           >
             Talk to Sales
           </Link>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

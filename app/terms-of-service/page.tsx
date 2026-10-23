@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "The terms governing use of the Easy RentPe app and owner dashboard, including per-bed subscription billing.",
+  alternates: { canonical: "/terms-of-service" },
 };
 
 const LAST_UPDATED = "September 21, 2026";
@@ -66,7 +67,7 @@ export default function TermsOfServicePage() {
             configurable grace period.
           </li>
           <li>
-            Plan features (Starter, Growth, Enterprise) are as described on the{" "}
+            Plan features (Growth, Enterprise) are as described on the{" "}
             <a href="/pricing" className="font-medium text-primary underline">
               Pricing page
             </a>{" "}

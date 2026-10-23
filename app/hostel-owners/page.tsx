@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "For Hostel Owners",
   description:
     "Easy RentPe is built for hostels with high tenant turnover, shared rooms, and constant move-ins/outs — fast onboarding, flexible sharing, and real-time occupancy.",
+  alternates: { canonical: "/hostel-owners" },
+  openGraph: {
+    title: "For Hostel Owners | Easy RentPe",
+    description:
+      "Easy RentPe is built for hostels with high tenant turnover, shared rooms, and constant move-ins/outs — fast onboarding, flexible sharing, and real-time occupancy.",
+    url: "/hostel-owners",
+  },
+  twitter: {
+    title: "For Hostel Owners | Easy RentPe",
+    description:
+      "Easy RentPe is built for hostels with high tenant turnover, shared rooms, and constant move-ins/outs — fast onboarding, flexible sharing, and real-time occupancy.",
+  },
 };
 
 const BULLETS = [

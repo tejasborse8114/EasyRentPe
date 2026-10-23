@@ -93,12 +93,12 @@ export type Step = {
 export const HOME_STEPS: Step[] = [
   {
     title: "Set up your property",
-    description: "Add rooms, sharing types, and pricing in minutes.",
+    description: "Add rooms, sharing types,UPI ID and pricing in minutes.",
   },
   {
     title: "Invite tenants",
     description:
-      "They register on the app, verify by OTP, and submit their declaration/ID proof for your approval.",
+      "They register on the app, verify by OTP, and submit their declaration/ID proof,sign digital agreement for your approval.",
   },
   {
     title: "Run operations",
@@ -244,15 +244,10 @@ export type PricingPlan = {
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
-    name: "Starter",
-    bestFor: "Single property, up to 30 beds",
-    included: ["Core tenant, room, rent & complaint management"],
-  },
-  {
     name: "Growth",
     bestFor: "Multi-property owners",
     included: [
-      "Everything in Starter",
+      "Core tenant, room, rent & complaint management",
       "Manager roles & permissions",
       "Multi-property dashboard",
     ],

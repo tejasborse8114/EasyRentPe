@@ -7,11 +7,37 @@ export const metadata: Metadata = {
   title: "FAQ",
   description:
     "Answers to common questions about Easy RentPe — pricing, payments, security, and multi-property management.",
+  alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "FAQ | Easy RentPe",
+    description:
+      "Answers to common questions about Easy RentPe — pricing, payments, security, and multi-property management.",
+    url: "/faq",
+  },
+  twitter: {
+    title: "FAQ | Easy RentPe",
+    description:
+      "Answers to common questions about Easy RentPe — pricing, payments, security, and multi-property management.",
+  },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
 };
 
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <section className="section">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">

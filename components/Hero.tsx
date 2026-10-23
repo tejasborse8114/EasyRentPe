@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, type ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 
 type CTA = {
@@ -29,10 +29,26 @@ export default function Hero({
   visual,
   belowCta,
 }: HeroProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const orbOneY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const orbTwoY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
   return (
-    <section className="section relative overflow-hidden bg-hero-mesh">
-      <div className="glow-orb -left-20 -top-20 h-72 w-72 bg-primary/20" aria-hidden="true" />
-      <div className="glow-orb -right-24 top-10 h-80 w-80 bg-accent/20" aria-hidden="true" />
+    <section ref={sectionRef} className="section relative overflow-hidden bg-hero-mesh">
+      <motion.div
+        style={{ y: orbOneY }}
+        className="glow-orb -left-20 -top-20 h-72 w-72 bg-primary/20"
+        aria-hidden="true"
+      />
+      <motion.div
+        style={{ y: orbTwoY }}
+        className="glow-orb -right-24 top-10 h-80 w-80 bg-accent/20"
+        aria-hidden="true"
+      />
       <div className="container-page relative grid items-center gap-12 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -69,7 +85,7 @@ export default function Hero({
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="relative"
+            className="relative animate-float"
           >
             <div className="glow-orb inset-x-8 inset-y-6 bg-primary/10" aria-hidden="true" />
             <div className="relative">{visual}</div>

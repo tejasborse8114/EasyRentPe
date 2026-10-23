@@ -26,6 +26,18 @@ export const metadata: Metadata = {
   title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
   description:
     "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+    description:
+      "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+    url: "/",
+  },
+  twitter: {
+    title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+    description:
+      "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+  },
 };
 
 export default function HomePage() {
@@ -63,7 +75,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-white">
+      <section className="section bg-surface-elevated">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Everything you need</p>
@@ -85,9 +97,12 @@ export default function HomePage() {
                 <MiniAppMockup
                   title="Rent Collection"
                   rows={[
-                    { icon: Wallet, label: "UPI, cash" },
-                    { icon: QrCode, label: "Default UPI ID per property" },
-                    { icon: ShieldCheck, label: "Owner verification before marking paid" },
+                    { icon: <Wallet className="h-4 w-4 text-primary" aria-hidden="true" />, label: "UPI, cash" },
+                    { icon: <QrCode className="h-4 w-4 text-primary" aria-hidden="true" />, label: "Default UPI ID per property" },
+                    {
+                      icon: <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />,
+                      label: "Owner verification before marking paid",
+                    },
                   ]}
                 />
               }
@@ -103,9 +118,9 @@ export default function HomePage() {
                 <MiniAppMockup
                   title="Tenant Onboarding"
                   rows={[
-                    { icon: ShieldCheck, label: "OTP-verified registration" },
-                    { icon: FileText, label: "ID proof & declaration upload" },
-                    { icon: UserCheck, label: "Owner review & approval" },
+                    { icon: <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />, label: "OTP-verified registration" },
+                    { icon: <FileText className="h-4 w-4 text-primary" aria-hidden="true" />, label: "ID proof & declaration upload" },
+                    { icon: <UserCheck className="h-4 w-4 text-primary" aria-hidden="true" />, label: "Owner review & approval" },
                   ]}
                 />
               }

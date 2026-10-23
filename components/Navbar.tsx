@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE_NAME } from "@/lib/site";
 
@@ -12,7 +13,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-surface/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-surface/80 backdrop-blur">
       <nav className="container-page flex h-16 items-center justify-between" aria-label="Main">
         <Link
           href="/"
@@ -31,11 +32,18 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  className={`relative text-sm font-medium transition-colors hover:text-primary ${
                     active ? "text-primary" : "text-ink-muted"
                   }`}
                 >
                   {link.label}
+                  {active && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-primary"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </Link>
               </li>
             );
@@ -60,14 +68,14 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-black/5 bg-surface lg:hidden">
+        <div className="border-t border-white/10 bg-surface lg:hidden">
           <ul className="container-page flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-primary/5"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-primary/10"
                 >
                   {link.label}
                 </Link>

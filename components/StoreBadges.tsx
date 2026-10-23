@@ -37,7 +37,7 @@ function StoreBadge({ href, glyph, eyebrow, storeName }: StoreBadgeProps) {
       target={isPlaceholder ? undefined : "_blank"}
       rel={isPlaceholder ? undefined : "noopener noreferrer"}
       aria-label={`${eyebrow} ${storeName}`}
-      className="flex items-center gap-3 rounded-xl bg-ink px-4 py-2.5 text-white shadow-card transition-colors hover:bg-ink/90"
+      className="flex items-center gap-3 rounded-xl border border-white/10 bg-black px-4 py-2.5 text-white shadow-card transition-colors hover:bg-black/80"
     >
       {glyph}
       <span className="flex flex-col leading-tight">
