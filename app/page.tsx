@@ -97,9 +97,12 @@ export default function HomePage() {
                 <MiniAppMockup
                   title="Rent Collection"
                   rows={[
-                    { icon: Wallet, label: "UPI, cash" },
-                    { icon: QrCode, label: "Default UPI ID per property" },
-                    { icon: ShieldCheck, label: "Owner verification before marking paid" },
+                    { icon: <Wallet className="h-4 w-4 text-primary" aria-hidden="true" />, label: "UPI, cash" },
+                    { icon: <QrCode className="h-4 w-4 text-primary" aria-hidden="true" />, label: "Default UPI ID per property" },
+                    {
+                      icon: <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />,
+                      label: "Owner verification before marking paid",
+                    },
                   ]}
                 />
               }
@@ -115,9 +118,9 @@ export default function HomePage() {
                 <MiniAppMockup
                   title="Tenant Onboarding"
                   rows={[
-                    { icon: ShieldCheck, label: "OTP-verified registration" },
-                    { icon: FileText, label: "ID proof & declaration upload" },
-                    { icon: UserCheck, label: "Owner review & approval" },
+                    { icon: <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />, label: "OTP-verified registration" },
+                    { icon: <FileText className="h-4 w-4 text-primary" aria-hidden="true" />, label: "ID proof & declaration upload" },
+                    { icon: <UserCheck className="h-4 w-4 text-primary" aria-hidden="true" />, label: "Owner review & approval" },
                   ]}
                 />
               }

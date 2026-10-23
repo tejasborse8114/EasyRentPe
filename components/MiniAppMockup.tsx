@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
 
 type Row = {
-  icon: LucideIcon;
+  icon: ReactNode;
   label: string;
 };
 
@@ -25,7 +25,7 @@ export default function MiniAppMockup({ title, rows }: { title: string; rows: Ro
       >
         <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">{title}</p>
         <div className="mt-4 space-y-3">
-          {rows.map(({ icon: Icon, label }, index) => (
+          {rows.map(({ icon, label }, index) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, x: -16 }}
@@ -36,7 +36,7 @@ export default function MiniAppMockup({ title, rows }: { title: string; rows: Ro
               className="flex items-center gap-3 rounded-xl bg-primary/10 p-3"
             >
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-primary/5">
-                <Icon className="h-4 w-4 text-primary" aria-hidden="true" />
+                {icon}
               </div>
               <p className="text-sm font-medium text-ink">{label}</p>
             </motion.div>
@@ -46,4 +46,5 @@ export default function MiniAppMockup({ title, rows }: { title: string; rows: Ro
     </div>
   );
 }
+
 
