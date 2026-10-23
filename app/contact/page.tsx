@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Contact / Request a Demo",
   description:
     "Tell us about your property and we'll set up a personalized Easy RentPe walkthrough.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact / Request a Demo | Easy RentPe",
+    description:
+      "Tell us about your property and we'll set up a personalized Easy RentPe walkthrough.",
+    url: "/contact",
+  },
+  twitter: {
+    title: "Contact / Request a Demo | Easy RentPe",
+    description:
+      "Tell us about your property and we'll set up a personalized Easy RentPe walkthrough.",
+  },
 };
 
 export default function ContactPage() {

@@ -26,6 +26,18 @@ export const metadata: Metadata = {
   title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
   description:
     "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+    description:
+      "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+    url: "/",
+  },
+  twitter: {
+    title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+    description:
+      "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+  },
 };
 
 export default function HomePage() {

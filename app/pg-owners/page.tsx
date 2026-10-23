@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: "For PG Owners",
   description:
     "Easy RentPe helps PG owners manage agreements and lock-in periods, collect rent via UPI, track utility dues fairly, and keep residents happy.",
+  alternates: { canonical: "/pg-owners" },
+  openGraph: {
+    title: "For PG Owners | Easy RentPe",
+    description:
+      "Easy RentPe helps PG owners manage agreements and lock-in periods, collect rent via UPI, track utility dues fairly, and keep residents happy.",
+    url: "/pg-owners",
+  },
+  twitter: {
+    title: "For PG Owners | Easy RentPe",
+    description:
+      "Easy RentPe helps PG owners manage agreements and lock-in periods, collect rent via UPI, track utility dues fairly, and keep residents happy.",
+  },
 };
 
 const BULLETS = [

@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Features",
   description:
     "Explore the full Easy RentPe feature set: tenant onboarding, rooms & properties, payments, dues & utilities, complaints, agreements, team permissions, notifications, and reporting.",
+  alternates: { canonical: "/features" },
+  openGraph: {
+    title: "Features | Easy RentPe",
+    description:
+      "Explore the full Easy RentPe feature set: tenant onboarding, rooms & properties, payments, dues & utilities, complaints, agreements, team permissions, notifications, and reporting.",
+    url: "/features",
+  },
+  twitter: {
+    title: "Features | Easy RentPe",
+    description:
+      "Explore the full Easy RentPe feature set: tenant onboarding, rooms & properties, payments, dues & utilities, complaints, agreements, team permissions, notifications, and reporting.",
+  },
 };
 
 export default function FeaturesPage() {

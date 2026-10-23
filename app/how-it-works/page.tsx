@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "How It Works",
   description:
     "From sign-up to scaling with managers — see how Easy RentPe gets your hostel or PG up and running.",
+  alternates: { canonical: "/how-it-works" },
+  openGraph: {
+    title: "How It Works | Easy RentPe",
+    description:
+      "From sign-up to scaling with managers — see how Easy RentPe gets your hostel or PG up and running.",
+    url: "/how-it-works",
+  },
+  twitter: {
+    title: "How It Works | Easy RentPe",
+    description:
+      "From sign-up to scaling with managers — see how Easy RentPe gets your hostel or PG up and running.",
+  },
 };
 
 export default function HowItWorksPage() {

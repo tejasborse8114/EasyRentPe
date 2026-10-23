@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How Easy RentPe collects, uses, and protects data for owners, managers, and tenants.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const LAST_UPDATED = "September 21, 2026";

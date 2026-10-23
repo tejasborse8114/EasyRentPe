@@ -1,5 +1,6 @@
 export const SITE_NAME = "Easy RentPe";
 export const SITE_TAGLINE = "Modern operations for hostels and PGs.";
+export const SITE_URL = "https://easyrentpe.com";
 
 export const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.easyrentpe.hostel_management_app";

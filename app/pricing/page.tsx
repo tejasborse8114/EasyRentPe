@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: "Pricing",
   description:
     "Simple, transparent, per-bed pricing for Easy RentPe. Pay only for the beds you manage — no setup fees, no long-term lock-in.",
+  alternates: { canonical: "/pricing" },
+  openGraph: {
+    title: "Pricing | Easy RentPe",
+    description:
+      "Simple, transparent, per-bed pricing for Easy RentPe. Pay only for the beds you manage — no setup fees, no long-term lock-in.",
+    url: "/pricing",
+  },
+  twitter: {
+    title: "Pricing | Easy RentPe",
+    description:
+      "Simple, transparent, per-bed pricing for Easy RentPe. Pay only for the beds you manage — no setup fees, no long-term lock-in.",
+  },
 };
 
 export default function PricingPage() {
