@@ -8,12 +8,19 @@
   }
 
   body {
-    @apply relative bg-surface bg-grid-pattern bg-[length:44px_44px] bg-center text-ink antialiased selection:bg-accent/30;
+    @apply relative bg-surface bg-cyber-aurora bg-fixed text-ink antialiased selection:bg-accent/30;
   }
 
+  /* Cyber dot-matrix ambient grid */
   body::before {
     content: "";
-    @apply pointer-events-none fixed inset-0 z-0 bg-noise opacity-[0.03];
+    @apply pointer-events-none fixed inset-0 z-0 bg-dot-matrix bg-[length:32px_32px] opacity-75;
+  }
+
+  /* Subtle film noise texture */
+  body::after {
+    content: "";
+    @apply pointer-events-none fixed inset-0 z-0 bg-noise opacity-[0.025];
   }
 
   :focus-visible {
@@ -27,11 +34,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 px-6 py-3 text-sm font-bold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-[0_16px_40px_-8px_rgba(16,185,129,0.6)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 px-6 py-3 text-sm font-bold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:shadow-[0_16px_40px_-6px_rgba(6,182,212,0.6)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-primary/30 bg-surface-elevated px-6 py-3 text-sm font-semibold text-primary-light shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:border-primary/60 hover:bg-primary/10 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-primary/30 bg-surface-elevated/80 px-6 py-3 text-sm font-semibold text-primary-light shadow-card backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] hover:border-primary/60 hover:bg-primary/10 active:scale-[0.98];
   }
 
   .section {
@@ -39,7 +46,7 @@
   }
 
   .card {
-    @apply rounded-2xl border border-white/10 bg-surface-elevated/90 p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-emerald-500/30 hover:shadow-glow;
+    @apply rounded-2xl border border-white/10 bg-gradient-to-b from-surface-elevated/95 to-surface-elevated/80 p-6 shadow-card backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-accent/40 hover:shadow-glow;
   }
 
   .eyebrow {
@@ -47,7 +54,7 @@
   }
 
   .gradient-text {
-    @apply animate-gradient-x bg-[length:200%_auto] bg-gradient-to-r from-emerald-400 via-teal-300 to-primary-light bg-clip-text text-transparent;
+    @apply animate-gradient-x bg-[length:200%_auto] bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-300 bg-clip-text text-transparent;
   }
 
   .glow-orb {

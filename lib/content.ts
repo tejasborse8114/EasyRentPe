@@ -26,7 +26,7 @@ export const HOME_FEATURES: Feature[] = [
     icon: UserCheck,
     title: "Tenant Onboarding & Verification",
     description:
-      "OTP-verified registration, Aadhar/ID uploads, digital declarations reviewed and approved by the owner.",
+      "OTP-verified registration, Govt ID document uploads, digital declarations reviewed and approved by the owner.",
   },
   {
     icon: Wallet,
@@ -71,8 +71,8 @@ export const PROBLEM_SOLUTIONS: ProblemSolution[] = [
     solution: "Automated dues & payment tracking",
   },
   {
-    problem: "Tenants messaging you on WhatsApp for everything?",
-    solution: "In-app complaints, notices & chat",
+    problem: "Chaotic phone calls for every small issue?",
+    solution: "In-app complaints & resolution tracking",
   },
   {
     problem: "Chasing tenants for agreements and ID proofs?",

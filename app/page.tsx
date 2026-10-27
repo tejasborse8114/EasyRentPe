@@ -71,7 +71,7 @@ export default function HomePage() {
             <span className="gradient-text">Collect Rent 3x Faster</span>
           </>
         }
-        subheadline="Collect rent effortlessly via UPI and Cash, verify tenants with mobile OTP & digital ID documents, track room occupancy live, and manage complaints without chaotic phone calls. All from one unified owner dashboard."
+        subheadline="Collect rent effortlessly via UPI and Cash, verify tenants with OTP & digital ID documents, track room occupancy live, and manage complaints without chaotic phone calls. All from one unified owner dashboard."
         primaryCta={{ label: "Book a Free Demo", href: "/contact" }}
         secondaryCta={{ label: "See How It Works", href: "/how-it-works" }}
         visual={<DashboardMockup />}
@@ -187,14 +187,14 @@ export default function HomePage() {
             <FeatureSpotlight
               eyebrow="Tenant Onboarding & Verification"
               title="Contactless, paperless move-ins"
-              description="Replace paper forms and lost photocopies with mobile OTP registration, digital ID uploads, and tenant declarations your team can review in minutes."
+              description="Replace paper forms and lost photocopies with OTP registration, digital ID uploads, and tenant declarations your team can review in minutes."
               bullets={FEATURE_CATEGORIES.find((c) => c.heading === "Tenant & Onboarding")!.items}
               reverse
               visual={
                 <MiniAppMockup
                   title="Tenant Onboarding"
                   rows={[
-                    { icon: <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Mobile OTP-verified registration" },
+                    { icon: <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />, label: "OTP-verified registration" },
                     { icon: <FileText className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Govt ID & declaration upload" },
                     { icon: <UserCheck className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Owner review & approval" },
                   ]}

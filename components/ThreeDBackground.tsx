@@ -40,12 +40,12 @@ export default function ThreeDBackground() {
     const BOUND_Y = 320;
     const BOUND_Z = 400;
 
-    // Stripe & Supabase Fintech Palette: Mint Emerald & Electric Cyber Blue
+    // Midnight Cyber Aurora Palette: Mint Emerald & Electric Cyan
     const colors = [
       "rgba(16, 185, 129, ", // Mint Emerald
       "rgba(52, 211, 153, ", // Mint Emerald light
-      "rgba(59, 130, 246, ", // Electric Cyber Blue
-      "rgba(96, 165, 250, ", // Cyber Blue light
+      "rgba(6, 182, 212, ",  // Electric Cyan
+      "rgba(56, 189, 248, ", // Sky Cyan
     ];
 
     const particles: Particle3D[] = [];
@@ -163,7 +163,7 @@ export default function ThreeDBackground() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(0.6, p.radius), 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${p.alpha})`;
-        ctx.shadowColor = p.color.includes("16, 185, 129") || p.color.includes("52, 211, 153") ? "#10B981" : "#3B82F6";
+        ctx.shadowColor = p.color.includes("16, 185, 129") || p.color.includes("52, 211, 153") ? "#10B981" : "#06B6D4";
         ctx.shadowBlur = p.scale * 10;
         ctx.fill();
       }

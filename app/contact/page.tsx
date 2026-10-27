@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Mail, Phone } from "lucide-react";
 import DemoForm from "@/components/DemoForm";
-import { SUPPORT_EMAIL, SUPPORT_PHONE_DISPLAY, SUPPORT_PHONE_TEL, WHATSAPP_URL } from "@/lib/site";
+import { SUPPORT_EMAIL, SUPPORT_PHONE_DISPLAY, SUPPORT_PHONE_TEL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact / Request a Demo",
@@ -38,14 +38,11 @@ export default function ContactPage() {
         <div className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-4">
           <a href={`tel:${SUPPORT_PHONE_TEL}`} className="btn-secondary">
             <Phone className="h-4 w-4" aria-hidden="true" />
-            {SUPPORT_PHONE_DISPLAY}
+            Call: {SUPPORT_PHONE_DISPLAY}
           </a>
           <a href={`mailto:${SUPPORT_EMAIL}`} className="btn-secondary">
             <Mail className="h-4 w-4" aria-hidden="true" />
-            {SUPPORT_EMAIL}
-          </a>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-            WhatsApp Us
+            Email: {SUPPORT_EMAIL}
           </a>
         </div>
 

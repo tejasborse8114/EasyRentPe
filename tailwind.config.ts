@@ -10,18 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#3B82F6", // Electric Cyber Blue (Stripe / Supabase)
-          light: "#60A5FA",
-          dark: "#1D4ED8",
+          DEFAULT: "#06B6D4", // Electric Cyan (Aurora Sky)
+          light: "#38BDF8",   // Bright Cyan Sky
+          dark: "#0891B2",
         },
         accent: {
-          DEFAULT: "#10B981", // Mint Emerald (Supabase / Payments / Verified)
+          DEFAULT: "#10B981", // Mint Emerald (Money, Rent, Verified)
           light: "#34D399",
           dark: "#059669",
         },
         surface: {
-          DEFAULT: "#030712", // Deep Void Black
-          elevated: "#0B1120", // Deep Obsidian Glass
+          DEFAULT: "#040711", // Deep Midnight Obsidian
+          elevated: "#0B132B", // Obsidian Aurora Glass
         },
         ink: {
           DEFAULT: "#F8FAFC", // Diamond Pure White
@@ -44,19 +44,22 @@ const config: Config = {
         "3xl": "2rem",
       },
       boxShadow: {
-        soft: "0 10px 40px -10px rgba(0, 0, 0, 0.7)",
-        card: "0 4px 24px -4px rgba(0, 0, 0, 0.6)",
-        glow: "0 20px 60px -15px rgba(16, 185, 129, 0.45)", // Emerald glow
-        "glow-primary": "0 20px 60px -15px rgba(59, 130, 246, 0.45)", // Blue glow
+        soft: "0 10px 40px -10px rgba(0, 0, 0, 0.75)",
+        card: "0 4px 24px -4px rgba(0, 0, 0, 0.65)",
+        glow: "0 20px 60px -15px rgba(16, 185, 129, 0.5)", // Mint Emerald Glow
+        "glow-cyan": "0 20px 60px -15px rgba(6, 182, 212, 0.5)", // Electric Cyan Glow
+        "glow-primary": "0 20px 60px -15px rgba(6, 182, 212, 0.45)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(circle, var(--tw-gradient-stops))",
+        "cyber-aurora":
+          "radial-gradient(ellipse 70% 55% at 15% 15%, rgba(16,185,129,0.26), transparent 60%), radial-gradient(ellipse 65% 50% at 85% 20%, rgba(6,182,212,0.28), transparent 60%), radial-gradient(ellipse 60% 50% at 50% 85%, rgba(59,130,246,0.20), transparent 65%)",
+        "dot-matrix":
+          "radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px)",
         "hero-mesh":
-          "radial-gradient(ellipse 65% 50% at 20% 20%, rgba(16,185,129,0.24), transparent 60%), radial-gradient(ellipse 60% 45% at 85% 15%, rgba(59,130,246,0.26), transparent 60%)",
-        "grid-pattern":
-          "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+          "radial-gradient(ellipse 65% 50% at 20% 20%, rgba(16,185,129,0.26), transparent 60%), radial-gradient(ellipse 60% 45% at 85% 15%, rgba(6,182,212,0.30), transparent 60%)",
         "noise":
-          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
+          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E\")",
       },
       keyframes: {
         float: {

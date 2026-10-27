@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import PageTransition from "@/components/PageTransition";
 import CustomCursor from "@/components/CustomCursor";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
@@ -55,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        {/* Trionn-style smooth custom follower cursor */}
+        {/* Custom follower cursor */}
         <CustomCursor />
         <ScrollProgress />
         <Navbar />
@@ -63,7 +62,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );
