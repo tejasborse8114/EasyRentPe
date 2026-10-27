@@ -78,7 +78,7 @@ export default function HomePage() {
         belowCta={
           <div className="space-y-5">
             {/* Trust highlights */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-muted">
+            <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-ink-muted">
               <div className="flex items-center gap-1.5">
                 <div className="flex items-center text-amber-400">
                   {[...Array(5)].map((_, i) => (

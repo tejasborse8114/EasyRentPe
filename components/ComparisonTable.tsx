@@ -14,19 +14,19 @@ export default function ComparisonTable({ rows }: { rows: ProblemSolution[] }) {
       className="overflow-hidden rounded-2xl border border-white/10 bg-surface-elevated shadow-card"
     >
       <div className="grid grid-cols-2 divide-x divide-white/10 border-b border-white/10 bg-primary/10">
-        <p className="px-5 py-4 text-sm font-semibold text-ink-muted">The old way</p>
-        <p className="px-5 py-4 text-sm font-semibold text-primary">With Easy RentPe</p>
+        <p className="px-3.5 py-3 sm:px-5 sm:py-4 text-xs sm:text-sm font-semibold text-ink-muted">The old way</p>
+        <p className="px-3.5 py-3 sm:px-5 sm:py-4 text-xs sm:text-sm font-semibold text-primary">With Easy RentPe</p>
       </div>
       <div className="divide-y divide-white/10">
         {rows.map((row) => (
           <div key={row.problem} className="grid grid-cols-2 divide-x divide-white/10">
-            <div className="flex items-start gap-2 px-5 py-4">
-              <X className="mt-0.5 h-4 w-4 shrink-0 text-ink-muted" aria-hidden="true" />
-              <p className="text-sm text-ink-muted">{row.problem}</p>
+            <div className="flex items-start gap-1.5 sm:gap-2 px-3 py-3 sm:px-5 sm:py-4">
+              <X className="mt-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-ink-muted" aria-hidden="true" />
+              <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">{row.problem}</p>
             </div>
-            <div className="flex items-start gap-2 px-5 py-4">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-              <p className="text-sm font-medium text-ink">{row.solution}</p>
+            <div className="flex items-start gap-1.5 sm:gap-2 px-3 py-3 sm:px-5 sm:py-4">
+              <Check className="mt-0.5 h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0 text-primary" aria-hidden="true" />
+              <p className="text-xs sm:text-sm font-medium text-ink leading-relaxed">{row.solution}</p>
             </div>
           </div>
         ))}

@@ -40,7 +40,7 @@ export default function InteractiveBentoShowcase() {
   const [activePaymentMode, setActivePaymentMode] = useState<"upi" | "cash">("upi");
 
   return (
-    <section className="section relative overflow-hidden bg-surface py-24">
+    <section className="relative overflow-hidden bg-surface py-14 sm:py-20 lg:py-24">
       {/* Background radial ambient lights */}
       <div className="glow-orb -left-40 top-1/3 h-96 w-96 bg-primary/15" aria-hidden="true" />
       <div className="glow-orb -right-40 bottom-1/4 h-96 w-96 bg-accent/15" aria-hidden="true" />
@@ -61,16 +61,16 @@ export default function InteractiveBentoShowcase() {
         </div>
 
         {/* Bento Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-12">
           {/* Bento Card 1: UPI & Cash Collection Terminal (7 cols) */}
           <div className="lg:col-span-7">
             <ThreeDTiltCard maxTilt={8} scale={1.01} className="h-full">
               <div
                 style={{ transformStyle: "preserve-3d" }}
-                className="card h-full flex flex-col justify-between border-white/10 bg-surface-elevated/85 p-6 sm:p-8 backdrop-blur-xl shadow-glow"
+                className="card h-full flex flex-col justify-between border-white/10 bg-surface-elevated/85 p-4 sm:p-8 backdrop-blur-xl shadow-glow"
               >
                 <div>
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <div className="flex items-center gap-2.5">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20 text-accent">
                         <Banknote className="h-5 w-5" />
@@ -80,7 +80,7 @@ export default function InteractiveBentoShowcase() {
                         <p className="text-xs text-ink-muted">Default Property UPI ID + Cash Logging</p>
                       </div>
                     </div>
-                    <div className="flex gap-1.5 rounded-lg bg-surface p-1 text-xs">
+                    <div className="flex gap-1.5 rounded-lg bg-surface p-1 text-xs self-start sm:self-auto">
                       <button
                         type="button"
                         onClick={() => setActivePaymentMode("upi")}
@@ -349,10 +349,10 @@ export default function InteractiveBentoShowcase() {
             <ThreeDTiltCard maxTilt={8} scale={1.01} className="h-full">
               <div
                 style={{ transformStyle: "preserve-3d" }}
-                className="card h-full flex flex-col justify-between border-white/10 bg-surface-elevated/85 p-6 sm:p-8 backdrop-blur-xl shadow-glow-primary"
+                className="card h-full flex flex-col justify-between border-white/10 bg-surface-elevated/85 p-4 sm:p-8 backdrop-blur-xl shadow-glow-primary"
               >
                 <div>
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <div className="flex items-center gap-2.5">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary">
                         <ShieldCheck className="h-5 w-5" />
@@ -362,7 +362,7 @@ export default function InteractiveBentoShowcase() {
                         <p className="text-xs text-ink-muted">OTP registration &amp; digital ID verification</p>
                       </div>
                     </div>
-                    <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary-light">
+                    <span className="self-start sm:self-auto rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary-light">
                       Paperless Move-in
                     </span>
                   </div>

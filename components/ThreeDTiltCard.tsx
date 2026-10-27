@@ -30,6 +30,7 @@ export default function ThreeDTiltCard({
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!cardRef.current) return;
+      if (window.matchMedia("(pointer: coarse)").matches) return;
       const rect = cardRef.current.getBoundingClientRect();
       const width = rect.width;
       const height = rect.height;
@@ -55,6 +56,7 @@ export default function ThreeDTiltCard({
   );
 
   const handleMouseEnter = useCallback(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     setIsHovered(true);
     cardScale.set(scale);
   }, [cardScale, scale]);

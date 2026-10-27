@@ -85,7 +85,7 @@ export default function DemoForm() {
             autoComplete="name"
             aria-invalid={!!errors.fullName}
             aria-describedby={errors.fullName ? "fullName-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("fullName")}
           />
           {errors.fullName && (
@@ -105,7 +105,7 @@ export default function DemoForm() {
             autoComplete="tel"
             aria-invalid={!!errors.phone}
             aria-describedby={errors.phone ? "phone-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("phone")}
           />
           {errors.phone && (
@@ -126,7 +126,7 @@ export default function DemoForm() {
           autoComplete="email"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? "email-error" : undefined}
-          className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           {...register("email")}
         />
         {errors.email && (
@@ -146,7 +146,7 @@ export default function DemoForm() {
             type="text"
             aria-invalid={!!errors.propertyName}
             aria-describedby={errors.propertyName ? "propertyName-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("propertyName")}
           />
           {errors.propertyName && (
@@ -166,7 +166,7 @@ export default function DemoForm() {
             min={1}
             aria-invalid={!!errors.numberOfBeds}
             aria-describedby={errors.numberOfBeds ? "numberOfBeds-error" : undefined}
-            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             {...register("numberOfBeds")}
           />
           {errors.numberOfBeds && (
@@ -203,7 +203,7 @@ export default function DemoForm() {
         <textarea
           id="message"
           rows={4}
-          className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          className="mt-1.5 w-full rounded-xl border border-white/15 bg-surface-elevated px-4 py-2.5 text-base sm:text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           {...register("message")}
         />
       </div>

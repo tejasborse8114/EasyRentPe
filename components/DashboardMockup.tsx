@@ -19,33 +19,35 @@ export default function DashboardMockup() {
 
   // Physics spring for 3D stage rotation
   const springConfig = { damping: 25, stiffness: 220, mass: 0.6 };
-  const rotateX = useSpring(10, springConfig);
-  const rotateY = useSpring(-12, springConfig);
+  const rotateX = useSpring(8, springConfig);
+  const rotateY = useSpring(-8, springConfig);
   const scale = useSpring(1, springConfig);
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
       if (!containerRef.current) return;
+      if (window.matchMedia("(pointer: coarse)").matches) return;
       const rect = containerRef.current.getBoundingClientRect();
       const xPct = (e.clientX - rect.left) / rect.width - 0.5;
       const yPct = (e.clientY - rect.top) / rect.height - 0.5;
 
       // Gentle interactive 3D tilt
-      rotateX.set(10 - yPct * 16);
-      rotateY.set(-12 + xPct * 20);
+      rotateX.set(8 - yPct * 14);
+      rotateY.set(-8 + xPct * 16);
     },
     [rotateX, rotateY]
   );
 
   const handleMouseEnter = useCallback(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
     setIsHovered(true);
     scale.set(1.02);
   }, [scale]);
 
   const handleMouseLeave = useCallback(() => {
     setIsHovered(false);
-    rotateX.set(10);
-    rotateY.set(-12);
+    rotateX.set(8);
+    rotateY.set(-8);
     scale.set(1);
   }, [rotateX, rotateY, scale]);
 
@@ -78,33 +80,33 @@ export default function DashboardMockup() {
         {/* Layer 0: Base Glass Owner Dashboard Window (translateZ: 0px) */}
         <div
           style={{ transform: "translateZ(0px)" }}
-          className="relative rounded-3xl border border-white/15 bg-surface-elevated/95 p-5 sm:p-6 shadow-2xl backdrop-blur-2xl transition-colors duration-300 hover:border-white/25"
+          className="relative rounded-3xl border border-white/15 bg-surface-elevated/95 p-4 sm:p-6 shadow-2xl backdrop-blur-2xl transition-colors duration-300 hover:border-white/25"
         >
           {/* Window Top Bar with macOS-style dots and Property Status */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-3.5">
-            <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-rose-500/80 shadow-sm" />
-              <span className="h-3 w-3 rounded-full bg-amber-500/80 shadow-sm" />
-              <span className="h-3 w-3 rounded-full bg-emerald-500/80 shadow-sm" />
-              <span className="ml-2 text-xs font-semibold text-ink-muted">
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-rose-500/80 shadow-sm" />
+              <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-500/80 shadow-sm" />
+              <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500/80 shadow-sm" />
+              <span className="ml-1.5 sm:ml-2 text-[11px] sm:text-xs font-semibold text-ink-muted">
                 EasyRentPe Cloud OS
               </span>
             </div>
-            <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-400">
+            <div className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-emerald-500/10 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold text-emerald-400">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
               Live Sync
             </div>
           </div>
 
           {/* Quick Header */}
-          <div className="mt-3.5 flex items-center justify-between">
+          <div className="mt-3 sm:mt-3.5 flex items-center justify-between">
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-ink-muted">
+              <p className="text-[10px] sm:text-[11px] uppercase tracking-wider text-ink-muted">
                 Property Overview
               </p>
-              <h4 className="text-base font-bold text-ink">Elite Co-Living &amp; Hostel</h4>
+              <h4 className="text-sm sm:text-base font-bold text-ink">Elite Co-Living &amp; Hostel</h4>
             </div>
-            <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary-light">
+            <span className="rounded-full bg-primary/10 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-semibold text-primary-light">
               92 Beds Total
             </span>
           </div>
@@ -112,52 +114,52 @@ export default function DashboardMockup() {
           {/* Layer 1: Elevated 3D Metric Cards (translateZ: 30px) - completely unobstructed */}
           <div
             style={{ transform: "translateZ(30px)" }}
-            className="mt-4 grid grid-cols-2 gap-3.5 sm:gap-4"
+            className="mt-3 sm:mt-4 grid grid-cols-2 gap-2.5 sm:gap-4"
           >
             {/* Rent Collected Card - on the left for hero priority and 100% obstruction-free visibility */}
-            <div className="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/15 via-accent/5 to-transparent p-3.5 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+            <div className="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/15 via-accent/5 to-transparent p-3 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between">
-                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-accent/20 text-accent">
-                  <Wallet className="h-4 w-4" />
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-accent/20 text-accent">
+                  <Wallet className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-400">
+                <span className="rounded-full bg-emerald-500/20 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold text-emerald-400">
                   94% On Time
                 </span>
               </div>
-              <p className="mt-2.5 text-2xl sm:text-3xl font-black text-ink whitespace-nowrap tracking-tight">₹5,42,000</p>
-              <p className="text-[11px] sm:text-xs text-ink-muted mt-0.5 whitespace-nowrap">Collected this month</p>
+              <p className="mt-2 sm:mt-2.5 text-xl sm:text-2xl lg:text-3xl font-black text-ink whitespace-nowrap tracking-tight">₹5,42,000</p>
+              <p className="text-[10px] sm:text-xs text-ink-muted mt-0.5 whitespace-nowrap">Collected this month</p>
             </div>
 
             {/* Occupancy Card - on the right */}
-            <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/15 via-primary/5 to-transparent p-3.5 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+            <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/15 via-primary/5 to-transparent p-3 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between">
-                <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/20 text-primary-light">
-                  <BedDouble className="h-4 w-4" />
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-primary/20 text-primary-light">
+                  <BedDouble className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="flex items-center text-[10px] font-bold text-emerald-400">
+                <span className="flex items-center text-[9px] sm:text-[10px] font-bold text-emerald-400">
                   <TrendingUp className="mr-0.5 h-3 w-3" /> +8%
                 </span>
               </div>
-              <p className="mt-2.5 text-2xl sm:text-3xl font-black text-ink">88%</p>
-              <p className="text-[11px] sm:text-xs text-ink-muted mt-0.5">Occupancy (81/92 Beds)</p>
+              <p className="mt-2 sm:mt-2.5 text-xl sm:text-2xl lg:text-3xl font-black text-ink">88%</p>
+              <p className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Occupancy (81/92 Beds)</p>
             </div>
           </div>
 
           {/* Layer 2: Bottom Section - Target progress bar on left + 3D Tenant Smartphone on right */}
-          <div className="mt-4 flex items-end justify-between gap-3 sm:gap-4">
+          <div className="mt-3 sm:mt-4 flex items-end justify-between gap-3 sm:gap-4">
             {/* Real-time Rent Collection Target (translateZ: 20px) */}
             <div
               style={{ transform: "translateZ(20px)" }}
-              className="flex-1 rounded-xl border border-white/5 bg-white/[0.03] p-3"
+              className="flex-1 rounded-xl border border-white/5 bg-white/[0.03] p-2.5 sm:p-3"
             >
-              <div className="flex items-center justify-between text-xs">
-                <span className="text-ink-muted font-medium">Monthly Collection Target</span>
+              <div className="flex items-center justify-between text-[11px] sm:text-xs">
+                <span className="text-ink-muted font-medium">Monthly Target</span>
                 <span className="font-bold text-accent">86% Achieved</span>
               </div>
               <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-white/10">
                 <div className="h-full w-[86%] rounded-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 shadow-glow" />
               </div>
-              <div className="mt-2 flex items-center justify-between text-[11px] text-ink-muted">
+              <div className="mt-2 flex items-center justify-between text-[10px] sm:text-[11px] text-ink-muted">
                 <span>Auto-notices: 14</span>
                 <span className="text-emerald-400 font-medium">0 disputes</span>
               </div>
@@ -218,14 +220,14 @@ export default function DashboardMockup() {
           style={{
             transform: "translateZ(85px)",
           }}
-          className="absolute -top-4 right-4 sm:right-6 flex items-center gap-2.5 rounded-2xl border border-emerald-500/30 bg-surface-elevated/95 px-3 py-1.5 shadow-glow backdrop-blur-xl transition-transform duration-300 hover:scale-105"
+          className="absolute -top-4 right-2 sm:right-6 flex items-center gap-2 sm:gap-2.5 rounded-2xl border border-emerald-500/30 bg-surface-elevated/95 px-2.5 py-1 sm:px-3 sm:py-1.5 shadow-glow backdrop-blur-xl transition-transform duration-300 hover:scale-105"
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
-            <Zap className="h-3.5 w-3.5" />
+          <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400">
+            <Zap className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
           </div>
           <div>
-            <p className="text-[11px] font-bold text-ink">₹12,500 Received</p>
-            <p className="text-[9px] text-emerald-400">Verified UPI / Cash</p>
+            <p className="text-[10px] sm:text-[11px] font-bold text-ink">₹12,500 Received</p>
+            <p className="text-[8px] sm:text-[9px] text-emerald-400">Verified UPI / Cash</p>
           </div>
         </div>
 

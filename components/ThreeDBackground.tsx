@@ -33,12 +33,13 @@ export default function ThreeDBackground() {
     };
     window.addEventListener("resize", handleResize);
 
-    // 3D particle simulation constants
-    const PARTICLE_COUNT = 60;
-    const FOCAL_LENGTH = 380;
-    const BOUND_X = 520;
-    const BOUND_Y = 320;
-    const BOUND_Z = 400;
+    // Responsive 3D particle simulation constants (lower count on mobile for 60fps & battery saving)
+    const isMobile = window.innerWidth < 640;
+    const PARTICLE_COUNT = isMobile ? 28 : 60;
+    const FOCAL_LENGTH = isMobile ? 300 : 380;
+    const BOUND_X = isMobile ? 320 : 520;
+    const BOUND_Y = isMobile ? 240 : 320;
+    const BOUND_Z = isMobile ? 300 : 400;
 
     // Midnight Cyber Aurora Palette: Mint Emerald & Electric Cyan
     const colors = [
@@ -62,11 +63,12 @@ export default function ThreeDBackground() {
       });
     }
 
-    // Mouse tracking for 3D rotation
+    // Mouse & ambient auto-drift for 3D rotation
     let targetRotX = 0;
     let targetRotY = 0;
     let rotX = 0;
     let rotY = 0;
+    let autoAngle = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -80,49 +82,56 @@ export default function ThreeDBackground() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
+      // Subtle ambient continuous drift on mobile and desktop
+      autoAngle += 0.002;
+      const ambientY = Math.sin(autoAngle) * 0.08;
+
       // Smooth camera interpolation
       rotX += (targetRotX - rotX) * 0.05;
-      rotY += (targetRotY - rotY) * 0.05;
+      rotY += ((targetRotY + ambientY) - rotY) * 0.05;
 
       const cosY = Math.cos(rotY);
       const sinY = Math.sin(rotY);
       const cosX = Math.cos(rotX);
       const sinX = Math.sin(rotX);
 
-      const projected: { x: number; y: number; z: number; scale: number; alpha: number; color: string; radius: number }[] = [];
+      // Project particles to 2D
+      const projected: Array<{
+        x: number;
+        y: number;
+        z: number;
+        scale: number;
+        alpha: number;
+        color: string;
+        radius: number;
+      }> = [];
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // Animate particles
+        // Animate positions
         p.x += p.vx;
         p.y += p.vy;
         p.z += p.vz;
 
-        // Soft bounce at 3D bounding box boundaries
-        if (p.x > BOUND_X || p.x < -BOUND_X) p.vx *= -1;
-        if (p.y > BOUND_Y || p.y < -BOUND_Y) p.vy *= -1;
-        if (p.z > BOUND_Z || p.z < -BOUND_Z) p.vz *= -1;
+        // Bounce within 3D bounding box
+        if (p.x < -BOUND_X || p.x > BOUND_X) p.vx *= -1;
+        if (p.y < -BOUND_Y || p.y > BOUND_Y) p.vy *= -1;
+        if (p.z < -BOUND_Z || p.z > BOUND_Z) p.vz *= -1;
 
-        // Rotate Y
-        let x1 = p.x * cosY - p.z * sinY;
-        let z1 = p.z * cosY + p.x * sinY;
+        // Apply camera rotation
+        const x1 = p.x * cosY + p.z * sinY;
+        const z1 = -p.x * sinY + p.z * cosY;
+        const y2 = p.y * cosX - z1 * sinX;
+        const z2 = p.y * sinX + z1 * cosX;
 
-        // Rotate X
-        let y1 = p.y * cosX - z1 * sinX;
-        let z2 = z1 * cosX + p.y * sinX;
+        // Perspective projection
+        const scale = FOCAL_LENGTH / (FOCAL_LENGTH + z2 + BOUND_Z);
+        const projX = width / 2 + x1 * scale;
+        const projY = height / 2 + y2 * scale;
 
-        // Camera distance shift
-        const cameraZ = z2 + 650;
-        if (cameraZ <= 50) continue;
-
-        const scale = FOCAL_LENGTH / cameraZ;
-        const projX = x1 * scale + width / 2;
-        const projY = y1 * scale + height / 2;
-
-        // Depth cue: alpha falls off with distance
-        const depthFactor = Math.max(0.1, Math.min(1, (z2 + BOUND_Z) / (BOUND_Z * 2)));
-        const alpha = depthFactor * 0.8;
+        // Depth alpha fade
+        const alpha = Math.min(1, Math.max(0.12, (scale - 0.4) * 1.5));
 
         projected.push({
           x: projX,
@@ -136,7 +145,7 @@ export default function ThreeDBackground() {
       }
 
       // Draw connection lines in 3D
-      const maxDistance = 115;
+      const maxDistance = isMobile ? 85 : 115;
       for (let i = 0; i < projected.length; i++) {
         for (let j = i + 1; j < projected.length; j++) {
           const p1 = projected[i];
@@ -164,7 +173,7 @@ export default function ThreeDBackground() {
         ctx.arc(p.x, p.y, Math.max(0.6, p.radius), 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${p.alpha})`;
         ctx.shadowColor = p.color.includes("16, 185, 129") || p.color.includes("52, 211, 153") ? "#10B981" : "#06B6D4";
-        ctx.shadowBlur = p.scale * 10;
+        ctx.shadowBlur = p.scale * 8;
         ctx.fill();
       }
       ctx.shadowBlur = 0; // Reset shadow
@@ -184,7 +193,7 @@ export default function ThreeDBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-65"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-70"
       aria-hidden="true"
     />
   );

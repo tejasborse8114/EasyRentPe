@@ -70,15 +70,15 @@ export default function Hero({
           <p className="mt-4 max-w-xl text-base sm:text-lg text-ink-muted leading-relaxed">{subheadline}</p>
 
           {(primaryCta || secondaryCta) && (
-            <div className="mt-6 flex flex-wrap items-center gap-4">
+            <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
               {primaryCta && (
-                <Link href={primaryCta.href} className="btn-primary">
+                <Link href={primaryCta.href} className="btn-primary w-full sm:w-auto text-center">
                   {primaryCta.label}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               )}
               {secondaryCta && (
-                <Link href={secondaryCta.href} className="btn-secondary">
+                <Link href={secondaryCta.href} className="btn-secondary w-full sm:w-auto text-center">
                   {secondaryCta.label}
                 </Link>
               )}
