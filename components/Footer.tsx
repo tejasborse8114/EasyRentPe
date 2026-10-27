@@ -29,14 +29,17 @@ export default function Footer() {
       />
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-6">
         <div className="sm:col-span-2 lg:col-span-2">
+          {/* Circular Logo Badge */}
           <Link href="/" className="flex items-center gap-3.5 transition-transform hover:scale-105">
-            <Image
-              src="/images/logo.png"
-              alt={`${SITE_NAME} logo`}
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain drop-shadow-[0_4px_16px_rgba(16,185,129,0.3)]"
-            />
+            <div className="relative flex h-13 w-13 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-glow ring-2 ring-white/30 overflow-hidden">
+              <Image
+                src="/images/logo.png"
+                alt={`${SITE_NAME} logo`}
+                width={56}
+                height={56}
+                className="h-full w-full rounded-full object-contain"
+              />
+            </div>
             <div className="flex flex-col">
               <span className="text-2xl font-black tracking-tight leading-none">
                 <span className="text-white">Easy</span>

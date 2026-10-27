@@ -15,20 +15,23 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-surface/90 backdrop-blur-xl">
       <nav className="container-page flex h-20 items-center justify-between" aria-label="Main">
-        {/* Enlarged Brand Identity with Exact Brand Colors from Official Logo */}
+        {/* Brand Identity with Circular Logo Badge (rounded-full) */}
         <Link
           href="/"
           className="flex items-center gap-3.5 transition-transform hover:scale-105"
           onClick={() => setOpen(false)}
         >
-          <Image
-            src="/images/logo.png"
-            alt={`${SITE_NAME} logo`}
-            width={52}
-            height={52}
-            className="h-12 w-12 sm:h-14 sm:w-14 object-contain drop-shadow-[0_4px_16px_rgba(16,185,129,0.3)]"
-            priority
-          />
+          {/* Circular Logo Badge */}
+          <div className="relative flex h-13 w-13 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-glow ring-2 ring-white/30 overflow-hidden">
+            <Image
+              src="/images/logo.png"
+              alt={`${SITE_NAME} logo`}
+              width={64}
+              height={64}
+              className="h-full w-full rounded-full object-contain"
+              priority
+            />
+          </div>
           <div className="flex flex-col">
             <span className="text-2xl sm:text-3xl font-black tracking-tight leading-none">
               <span className="text-white">Easy</span>
