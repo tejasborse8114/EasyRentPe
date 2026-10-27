@@ -10,26 +10,25 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#8B5CF6",
-          light: "#A78BFA",
-          dark: "#5B21B6",
+          DEFAULT: "#3B82F6", // Electric Cyber Blue (Stripe / Supabase)
+          light: "#60A5FA",
+          dark: "#1D4ED8",
         },
         accent: {
-          DEFAULT: "#2DD4BF",
-          light: "#5EEAD4",
-          dark: "#0F766E",
+          DEFAULT: "#10B981", // Mint Emerald (Supabase / Payments / Verified)
+          light: "#34D399",
+          dark: "#059669",
         },
         surface: {
-          DEFAULT: "#0A0A14",
-          elevated: "#15151F",
+          DEFAULT: "#030712", // Deep Void Black
+          elevated: "#0B1120", // Deep Obsidian Glass
         },
         ink: {
-          DEFAULT: "#EAE8F5",
-          muted: "#9B96B5",
+          DEFAULT: "#F8FAFC", // Diamond Pure White
+          muted: "#94A3B8",   // Crisp Slate Muted
         },
       },
       fontFamily: {
-        // Falls back to the OS's Inter-like system sans-serif stack (no external font fetch required).
         sans: [
           "Inter",
           "-apple-system",
@@ -42,19 +41,20 @@ const config: Config = {
       borderRadius: {
         xl: "1rem",
         "2xl": "1.5rem",
+        "3xl": "2rem",
       },
       boxShadow: {
-        soft: "0 10px 40px -10px rgba(0, 0, 0, 0.55)",
-        card: "0 4px 24px -4px rgba(0, 0, 0, 0.45)",
-        glow: "0 20px 60px -15px rgba(45, 212, 191, 0.4)",
-        "glow-primary": "0 20px 60px -15px rgba(139, 92, 246, 0.45)",
+        soft: "0 10px 40px -10px rgba(0, 0, 0, 0.7)",
+        card: "0 4px 24px -4px rgba(0, 0, 0, 0.6)",
+        glow: "0 20px 60px -15px rgba(16, 185, 129, 0.45)", // Emerald glow
+        "glow-primary": "0 20px 60px -15px rgba(59, 130, 246, 0.45)", // Blue glow
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(circle, var(--tw-gradient-stops))",
         "hero-mesh":
-          "radial-gradient(ellipse 60% 50% at 20% 20%, rgba(139,92,246,0.28), transparent 60%), radial-gradient(ellipse 55% 45% at 85% 15%, rgba(45,212,191,0.22), transparent 60%)",
+          "radial-gradient(ellipse 65% 50% at 20% 20%, rgba(16,185,129,0.24), transparent 60%), radial-gradient(ellipse 60% 45% at 85% 15%, rgba(59,130,246,0.26), transparent 60%)",
         "grid-pattern":
-          "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
         "noise":
           "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
       },
@@ -71,12 +71,22 @@ const config: Config = {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         float: "float 6s ease-in-out infinite",
         "float-delayed": "float 7s ease-in-out infinite 1.2s",
         "pulse-glow": "pulse-glow 4.5s ease-in-out infinite",
         "gradient-x": "gradient-x 6s ease infinite",
+        marquee: "marquee 25s linear infinite",
+        "spin-slow": "spin-slow 12s linear infinite",
       },
     },
   },

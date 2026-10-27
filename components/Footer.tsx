@@ -22,32 +22,40 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/10 bg-surface-elevated">
+    <footer className="relative border-t border-white/10 bg-surface-elevated/90 backdrop-blur-xl">
       <div
-        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"
         aria-hidden="true"
       />
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-6">
         <div className="sm:col-span-2 lg:col-span-2">
-          <Link href="/" className="flex items-center gap-2 text-lg font-bold text-primary">
-            <Image src="/images/logo.png" alt={`${SITE_NAME} logo`} width={40} height={40} className="h-10 w-10 rounded-xl" />
-            {SITE_NAME}
+          <Link href="/" className="flex items-center gap-2.5 text-lg font-extrabold text-white">
+            <Image
+              src="/images/logo.png"
+              alt={`${SITE_NAME} logo`}
+              width={38}
+              height={38}
+              className="h-9 w-9 rounded-xl shadow-glow"
+            />
+            <span className="tracking-tight">
+              Easy<span className="text-accent">RentPe</span>
+            </span>
           </Link>
-          <p className="mt-3 max-w-xs text-sm text-ink-muted">{SITE_TAGLINE}</p>
+          <p className="mt-3 max-w-xs text-sm text-ink-muted leading-relaxed">{SITE_TAGLINE}</p>
 
           <div className="mt-5 space-y-2">
             <a
               href={`tel:${SUPPORT_PHONE_TEL}`}
-              className="flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-primary"
+              className="flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-accent"
             >
-              <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <Phone className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
               {SUPPORT_PHONE_DISPLAY}
             </a>
             <a
               href={`mailto:${SUPPORT_EMAIL}`}
-              className="flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-primary"
+              className="flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-accent"
             >
-              <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
+              <Mail className="h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
               {SUPPORT_EMAIL}
             </a>
           </div>
@@ -58,7 +66,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary hover:text-white hover:shadow-glow-primary"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/5 bg-white/[0.03] text-ink-muted transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent/15 hover:text-accent hover:shadow-glow"
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -66,8 +74,8 @@ export default function Footer() {
           </div>
 
           <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
-              Get the app
+            <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
+              Get the mobile app
             </p>
             <StoreBadges className="mt-3" />
           </div>
@@ -75,13 +83,13 @@ export default function Footer() {
 
         {FOOTER_COLUMNS.map((column) => (
           <div key={column.heading}>
-            <h3 className="text-sm font-semibold text-ink">{column.heading}</h3>
+            <h3 className="text-sm font-bold text-ink">{column.heading}</h3>
             <ul className="mt-4 space-y-3">
               {column.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-ink-muted transition-colors hover:text-primary"
+                    className="text-sm text-ink-muted transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -97,7 +105,7 @@ export default function Footer() {
           <p>
             © {year} {SITE_NAME}. All rights reserved.
           </p>
-          <p>{SITE_TAGLINE}</p>
+          <p className="text-xs">{SITE_TAGLINE}</p>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import PageTransition from "@/components/PageTransition";
+import CustomCursor from "@/components/CustomCursor";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "@/styles/globals.css";
 
@@ -49,11 +50,13 @@ const organizationJsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col font-sans">
+      <body className="flex min-h-screen flex-col font-sans bg-surface text-ink antialiased selection:bg-accent/30">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        {/* Trionn-style smooth custom follower cursor */}
+        <CustomCursor />
         <ScrollProgress />
         <Navbar />
         <main className="flex-1">

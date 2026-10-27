@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import ThreeDTiltCard from "./ThreeDTiltCard";
 
 type PropertyTypeCardProps = {
   icon: ReactNode;
@@ -18,18 +19,37 @@ export default function PropertyTypeCard({
 }: PropertyTypeCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.85 }}
+      initial={{ opacity: 0, scale: 0.88 }}
       whileInView={{ opacity: 1, scale: 1 }}
-      whileHover={{ scale: 1.05, y: -4 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.08, 0.32) }}
-      className="card flex h-full flex-col items-center text-center"
+      className="h-full"
     >
-      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5">
-        {icon}
-      </div>
-      <h3 className="mt-4 text-sm font-semibold text-ink">{title}</h3>
-      <p className="mt-2 text-xs text-ink-muted">{description}</p>
+      <ThreeDTiltCard maxTilt={14} scale={1.04} className="h-full">
+        <div
+          style={{ transformStyle: "preserve-3d" }}
+          className="card flex h-full flex-col items-center text-center border-white/10 bg-surface-elevated/70 backdrop-blur-md hover:border-accent/40 hover:shadow-glow transition-colors"
+        >
+          <div
+            style={{ transform: "translateZ(30px)" }}
+            className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent/25 via-accent/10 to-transparent shadow-md text-accent"
+          >
+            {icon}
+          </div>
+          <h3
+            style={{ transform: "translateZ(20px)" }}
+            className="mt-4 text-sm font-bold text-ink"
+          >
+            {title}
+          </h3>
+          <p
+            style={{ transform: "translateZ(12px)" }}
+            className="mt-2 text-xs text-ink-muted leading-relaxed"
+          >
+            {description}
+          </p>
+        </div>
+      </ThreeDTiltCard>
     </motion.div>
   );
 }

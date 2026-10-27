@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Wallet, QrCode, ShieldCheck, FileText, UserCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Wallet,
+  QrCode,
+  ShieldCheck,
+  FileText,
+  UserCheck,
+  Star,
+  CheckCircle2,
+  Banknote,
+} from "lucide-react";
 import Hero from "@/components/Hero";
 import DashboardMockup from "@/components/DashboardMockup";
 import FeatureGrid from "@/components/FeatureGrid";
@@ -13,6 +23,8 @@ import StepsList from "@/components/StepsList";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import StoreBadges from "@/components/StoreBadges";
+import MarqueeTicker from "@/components/MarqueeTicker";
+import InteractiveBentoShowcase from "@/components/InteractiveBentoShowcase";
 import {
   HOME_FEATURES,
   HOME_STEPS,
@@ -23,20 +35,20 @@ import {
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+  title: "Easy RentPe — Run Your Hostels & PGs Smarter, Collect Rent 3x Faster",
   description:
-    "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+    "The all-in-one operating system for hostels & PGs. Collect rent via UPI and Cash, manage digital tenant onboarding, room allocation, and maintenance complaints from a single dashboard.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+    title: "Easy RentPe — Run Your Hostels & PGs Smarter, Collect Rent 3x Faster",
     description:
-      "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+      "The all-in-one operating system for hostels & PGs. Collect rent via UPI and Cash, manage digital tenant onboarding, room allocation, and maintenance complaints from a single dashboard.",
     url: "/",
   },
   twitter: {
-    title: "Easy RentPe — The Complete Operating System for Hostels & PGs",
+    title: "Easy RentPe — Run Your Hostels & PGs Smarter, Collect Rent 3x Faster",
     description:
-      "Manage tenants, rooms, rent collection, complaints, and agreements — all in one place, with a branded tenant app for residents.",
+      "The all-in-one operating system for hostels & PGs. Collect rent via UPI and Cash, manage digital tenant onboarding, room allocation, and maintenance complaints from a single dashboard.",
   },
 };
 
@@ -44,16 +56,66 @@ export default function HomePage() {
   return (
     <>
       <Hero
-        eyebrow="Made Hostel Management Easy"
-        headline="The Complete Operating System for Hostels & PGs"
-        subheadline="Manage tenants, rooms, rent collection, complaints, and agreements — all in one place. Give your residents a modern app experience while you run everything from a single owner dashboard."
+        eyebrow={
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-semibold tracking-wider text-accent uppercase backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+            </span>
+            <span>#1 SMART PG &amp; HOSTEL PLATFORM</span>
+          </div>
+        }
+        headline={
+          <>
+            Run Your Hostels &amp; PGs Smarter,{" "}
+            <span className="gradient-text">Collect Rent 3x Faster</span>
+          </>
+        }
+        subheadline="Collect rent effortlessly via UPI and Cash, verify tenants with mobile OTP & digital ID documents, track room occupancy live, and manage complaints without chaotic phone calls. All from one unified owner dashboard."
         primaryCta={{ label: "Book a Free Demo", href: "/contact" }}
         secondaryCta={{ label: "See How It Works", href: "/how-it-works" }}
         visual={<DashboardMockup />}
-        belowCta={<StoreBadges />}
+        belowCta={
+          <div className="space-y-5">
+            {/* Trust highlights */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-muted">
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-amber-400" aria-hidden="true" />
+                  ))}
+                </div>
+                <span className="font-semibold text-ink">4.9/5</span>
+                <span>(500+ PG owners)</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-4 w-4 text-accent" aria-hidden="true" />
+                <span>Zero setup fee</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Banknote className="h-4 w-4 text-accent" aria-hidden="true" />
+                <span>UPI &amp; Cash Collection</span>
+              </div>
+            </div>
+
+            {/* Store badges */}
+            <div className="pt-1">
+              <p className="mb-2.5 text-xs font-medium uppercase tracking-wider text-ink-muted">
+                Available on Mobile &amp; Web
+              </p>
+              <StoreBadges />
+            </div>
+          </div>
+        }
       />
 
-      <section className="pb-16">
+      {/* Kinetic marquee ticker */}
+      <MarqueeTicker speed="normal" />
+
+      {/* Interactive 3D Bento Grid */}
+      <InteractiveBentoShowcase />
+
+      <section className="pb-16 pt-8">
         <div className="container-page space-y-10">
           <PropertyTypesShowcase types={PROPERTY_TYPES} />
           <StatsBar stats={STATS} />
@@ -75,6 +137,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Reverse Marquee Ticker */}
+      <MarqueeTicker
+        speed="slow"
+        reverse
+        items={[
+          "DIGITAL TENANT ONBOARDING",
+          "UPI & CASH PAYMENT TRACKING",
+          "AUTOMATED ELECTRICITY BILLING",
+          "IN-APP NOTICES & COMPLAINTS",
+          "ROOM OCCUPANCY MATRIX",
+          "DIGITAL RENTAL DECLARATIONS",
+        ]}
+      />
+
       <section className="section bg-surface-elevated">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
@@ -91,16 +167,16 @@ export default function HomePage() {
             <FeatureSpotlight
               eyebrow="Rent & Payment Collection"
               title="Get paid on time, every time"
-              description="Every property is ready to collect rent instantly — tenants pay however suits them, and every payment is verified before it's marked received."
+              description="Every property is ready to collect rent instantly — tenants pay via UPI or Cash directly, and every payment is verified before it's marked received."
               bullets={FEATURE_CATEGORIES.find((c) => c.heading === "Payments & Rent")!.items}
               visual={
                 <MiniAppMockup
                   title="Rent Collection"
                   rows={[
-                    { icon: <Wallet className="h-4 w-4 text-primary" aria-hidden="true" />, label: "UPI, cash" },
-                    { icon: <QrCode className="h-4 w-4 text-primary" aria-hidden="true" />, label: "Default UPI ID per property" },
+                    { icon: <Wallet className="h-4 w-4 text-accent" aria-hidden="true" />, label: "UPI & Cash payments accepted" },
+                    { icon: <QrCode className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Default UPI ID / QR per property" },
                     {
-                      icon: <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />,
+                      icon: <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />,
                       label: "Owner verification before marking paid",
                     },
                   ]}
@@ -111,16 +187,16 @@ export default function HomePage() {
             <FeatureSpotlight
               eyebrow="Tenant Onboarding & Verification"
               title="Contactless, paperless move-ins"
-              description="Replace paper forms and photocopies with OTP-verified registration and digital declarations your team can review in minutes."
+              description="Replace paper forms and lost photocopies with mobile OTP registration, digital ID uploads, and tenant declarations your team can review in minutes."
               bullets={FEATURE_CATEGORIES.find((c) => c.heading === "Tenant & Onboarding")!.items}
               reverse
               visual={
                 <MiniAppMockup
                   title="Tenant Onboarding"
                   rows={[
-                    { icon: <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />, label: "OTP-verified registration" },
-                    { icon: <FileText className="h-4 w-4 text-primary" aria-hidden="true" />, label: "ID proof & declaration upload" },
-                    { icon: <UserCheck className="h-4 w-4 text-primary" aria-hidden="true" />, label: "Owner review & approval" },
+                    { icon: <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Mobile OTP-verified registration" },
+                    { icon: <FileText className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Govt ID & declaration upload" },
+                    { icon: <UserCheck className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Owner review & approval" },
                   ]}
                 />
               }
