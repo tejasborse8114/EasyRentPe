@@ -13,24 +13,32 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-surface/85 backdrop-blur-xl">
-      <nav className="container-page flex h-16 items-center justify-between" aria-label="Main">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-surface/90 backdrop-blur-xl">
+      <nav className="container-page flex h-20 items-center justify-between" aria-label="Main">
+        {/* Enlarged Brand Identity with Exact Brand Colors from Official Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg font-extrabold text-ink transition-transform hover:scale-105"
+          className="flex items-center gap-3.5 transition-transform hover:scale-105"
           onClick={() => setOpen(false)}
         >
           <Image
             src="/images/logo.png"
             alt={`${SITE_NAME} logo`}
-            width={38}
-            height={38}
-            className="h-9 w-9 rounded-xl shadow-glow"
+            width={52}
+            height={52}
+            className="h-12 w-12 sm:h-14 sm:w-14 object-contain drop-shadow-[0_4px_16px_rgba(16,185,129,0.3)]"
             priority
           />
-          <span className="tracking-tight">
-            Easy<span className="text-accent">RentPe</span>
-          </span>
+          <div className="flex flex-col">
+            <span className="text-2xl sm:text-3xl font-black tracking-tight leading-none">
+              <span className="text-white">Easy</span>
+              <span className="text-[#0055D4]">Rent</span>
+              <span className="text-[#00A859]">Pe</span>
+            </span>
+            <span className="mt-1 hidden text-[9px] font-bold uppercase tracking-widest text-ink-muted/80 sm:block">
+              Hostel Management Made Easy
+            </span>
+          </div>
         </Link>
 
         <ul className="hidden items-center gap-7 lg:flex">

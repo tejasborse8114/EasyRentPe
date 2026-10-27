@@ -29,17 +29,24 @@ export default function Footer() {
       />
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-6">
         <div className="sm:col-span-2 lg:col-span-2">
-          <Link href="/" className="flex items-center gap-2.5 text-lg font-extrabold text-white">
+          <Link href="/" className="flex items-center gap-3.5 transition-transform hover:scale-105">
             <Image
               src="/images/logo.png"
               alt={`${SITE_NAME} logo`}
-              width={38}
-              height={38}
-              className="h-9 w-9 rounded-xl shadow-glow"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain drop-shadow-[0_4px_16px_rgba(16,185,129,0.3)]"
             />
-            <span className="tracking-tight">
-              Easy<span className="text-accent">RentPe</span>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black tracking-tight leading-none">
+                <span className="text-white">Easy</span>
+                <span className="text-[#0055D4]">Rent</span>
+                <span className="text-[#00A859]">Pe</span>
+              </span>
+              <span className="mt-1 text-[9px] font-bold uppercase tracking-widest text-ink-muted/80">
+                Hostel Management Made Easy
+              </span>
+            </div>
           </Link>
           <p className="mt-3 max-w-xs text-sm text-ink-muted leading-relaxed">{SITE_TAGLINE}</p>
 
