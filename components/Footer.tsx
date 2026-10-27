@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="sm:col-span-2 lg:col-span-2">
           {/* Circular Logo Badge */}
           <Link href="/" className="flex items-center gap-3.5 transition-transform hover:scale-105">
-            <div className="relative flex h-13 w-13 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-glow ring-2 ring-white/30 overflow-hidden">
+            <div className="relative flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-glow ring-2 ring-white/30 overflow-hidden">
               <Image
                 src="/images/logo.png"
                 alt={`${SITE_NAME} logo`}

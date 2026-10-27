@@ -39,7 +39,7 @@ export default function Hero({
   const orbTwoY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
-    <section ref={sectionRef} className="section relative overflow-hidden bg-hero-mesh min-h-[85vh] flex items-center">
+    <section ref={sectionRef} className="relative overflow-hidden bg-hero-mesh pt-6 pb-12 sm:pt-8 sm:pb-14 lg:pt-10 lg:pb-16 flex items-center">
       {/* Interactive 3D particle constellation canvas */}
       <ThreeDBackground />
 
@@ -53,7 +53,7 @@ export default function Hero({
         className="glow-orb -right-24 top-10 h-80 w-80 bg-accent/20"
         aria-hidden="true"
       />
-      <div className="container-page relative z-10 grid items-center gap-12 lg:grid-cols-2">
+      <div className="container-page relative z-10 grid items-center gap-10 lg:grid-cols-2">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,13 +64,13 @@ export default function Hero({
               {typeof eyebrow === "string" ? <p className="eyebrow">{eyebrow}</p> : eyebrow}
             </div>
           )}
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-ink sm:text-5xl lg:text-6xl">
+          <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl xl:text-[3.4rem] xl:leading-[1.12]">
             {headline}
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-ink-muted leading-relaxed">{subheadline}</p>
+          <p className="mt-4 max-w-xl text-base sm:text-lg text-ink-muted leading-relaxed">{subheadline}</p>
 
           {(primaryCta || secondaryCta) && (
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center gap-4">
               {primaryCta && (
                 <Link href={primaryCta.href} className="btn-primary">
                   {primaryCta.label}
@@ -85,7 +85,7 @@ export default function Hero({
             </div>
           )}
 
-          {belowCta && <div className="mt-8">{belowCta}</div>}
+          {belowCta && <div className="mt-6">{belowCta}</div>}
         </motion.div>
 
         {visual && (
