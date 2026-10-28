@@ -36,11 +36,11 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-primary/10 bg-primary/5 p-6 text-center">
+          <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-blue-200 bg-blue-50/70 p-6 text-center shadow-sm">
             <p className="text-3xl font-bold text-primary">
-              ₹25<span className="text-base font-medium text-ink-muted"> / Bed</span>
+              ₹25<span className="text-base font-medium text-slate-600"> / Bed</span>
             </p>
-            <p className="mt-2 text-sm text-ink-muted">
+            <p className="mt-2 text-sm text-slate-600">
               Monthly platform fee calculated per bed, billed monthly to the owner.
             </p>
           </div>

@@ -28,12 +28,12 @@ export default function FeatureCard({
       <ThreeDTiltCard maxTilt={12} scale={1.03} className="h-full">
         <div
           style={{ transformStyle: "preserve-3d" }}
-          className="card h-full flex flex-col justify-between border-white/10 bg-surface-elevated/80 backdrop-blur-md hover:border-primary/40 hover:shadow-glow-primary transition-colors"
+          className="card h-full flex flex-col justify-between border-slate-200/90 bg-white/95 backdrop-blur-md hover:border-primary/50 hover:shadow-card-hover transition-all"
         >
           <div>
             <div
               style={{ transform: "translateZ(32px)" }}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 via-primary/10 to-transparent shadow-md text-primary"
+              className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-transparent border border-primary/20 shadow-sm text-primary"
             >
               {icon}
             </div>

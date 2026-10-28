@@ -10,22 +10,22 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#06B6D4", // Electric Cyan (Aurora Sky)
-          light: "#38BDF8",   // Bright Cyan Sky
-          dark: "#0891B2",
+          DEFAULT: "#0055D4", // EasyRentPe Official Royal Blue
+          light: "#2563EB",   // Vibrant Sapphire Blue
+          dark: "#0040A8",
         },
         accent: {
-          DEFAULT: "#10B981", // Mint Emerald (Money, Rent, Verified)
-          light: "#34D399",
-          dark: "#059669",
+          DEFAULT: "#00A859", // EasyRentPe Official Emerald Green
+          light: "#10B981",   // Fresh Mint Emerald
+          dark: "#047857",
         },
         surface: {
-          DEFAULT: "#040711", // Deep Midnight Obsidian
-          elevated: "#0B132B", // Obsidian Aurora Glass
+          DEFAULT: "#F8FAFC", // Clean Crisp Light Slate-50 Base
+          elevated: "#FFFFFF", // Pure Diamond White Card
         },
         ink: {
-          DEFAULT: "#F8FAFC", // Diamond Pure White
-          muted: "#94A3B8",   // Crisp Slate Muted
+          DEFAULT: "#0F172A", // Deep Obsidian Slate-900 (High-Contrast Readability)
+          muted: "#475569",   // Refined Slate-600
         },
       },
       fontFamily: {
@@ -44,22 +44,22 @@ const config: Config = {
         "3xl": "2rem",
       },
       boxShadow: {
-        soft: "0 10px 40px -10px rgba(0, 0, 0, 0.75)",
-        card: "0 4px 24px -4px rgba(0, 0, 0, 0.65)",
-        glow: "0 20px 60px -15px rgba(16, 185, 129, 0.5)", // Mint Emerald Glow
-        "glow-cyan": "0 20px 60px -15px rgba(6, 182, 212, 0.5)", // Electric Cyan Glow
-        "glow-primary": "0 20px 60px -15px rgba(6, 182, 212, 0.45)",
+        soft: "0 10px 40px -10px rgba(15, 23, 42, 0.08)",
+        card: "0 2px 14px -2px rgba(15, 23, 42, 0.06), 0 0 1px 1px rgba(15, 23, 42, 0.04)",
+        glow: "0 14px 34px -8px rgba(0, 85, 212, 0.28)", // Royal Blue Glow
+        "glow-accent": "0 14px 34px -8px rgba(0, 168, 89, 0.26)", // Emerald Glow
+        "glow-primary": "0 14px 34px -8px rgba(0, 85, 212, 0.28)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(circle, var(--tw-gradient-stops))",
-        "cyber-aurora":
-          "radial-gradient(ellipse 70% 55% at 15% 15%, rgba(16,185,129,0.26), transparent 60%), radial-gradient(ellipse 65% 50% at 85% 20%, rgba(6,182,212,0.28), transparent 60%), radial-gradient(ellipse 60% 50% at 50% 85%, rgba(59,130,246,0.20), transparent 65%)",
+        "clean-light":
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,85,212,0.06), transparent 70%), radial-gradient(ellipse 60% 40% at 90% 30%, rgba(0,168,89,0.05), transparent 60%), radial-gradient(ellipse 60% 40% at 10% 70%, rgba(37,99,235,0.05), transparent 60%)",
         "dot-matrix":
-          "radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px)",
+          "radial-gradient(rgba(15, 23, 42, 0.07) 1.2px, transparent 1.2px)",
         "hero-mesh":
-          "radial-gradient(ellipse 65% 50% at 20% 20%, rgba(16,185,129,0.26), transparent 60%), radial-gradient(ellipse 60% 45% at 85% 15%, rgba(6,182,212,0.30), transparent 60%)",
+          "radial-gradient(ellipse 70% 50% at 20% 10%, rgba(0,85,212,0.08), transparent 60%), radial-gradient(ellipse 60% 40% at 85% 15%, rgba(0,168,89,0.07), transparent 60%)",
         "noise":
-          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E\")",
+          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E\")",
       },
       keyframes: {
         float: {
@@ -88,8 +88,8 @@ const config: Config = {
         "float-delayed": "float 7s ease-in-out infinite 1.2s",
         "pulse-glow": "pulse-glow 4.5s ease-in-out infinite",
         "gradient-x": "gradient-x 6s ease infinite",
-        marquee: "marquee 25s linear infinite",
-        "spin-slow": "spin-slow 12s linear infinite",
+        marquee: "marquee 30s linear infinite",
+        "spin-slow": "spin-slow 20s linear infinite",
       },
     },
   },

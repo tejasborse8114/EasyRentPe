@@ -9,7 +9,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-surface-elevated">
+    <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white shadow-card overflow-hidden">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         const panelId = `faq-panel-${index}`;
@@ -24,11 +24,11 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left"
+                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left hover:bg-slate-50/70 transition-colors"
               >
-                <span className="text-base font-semibold text-ink">{item.question}</span>
+                <span className="text-base font-semibold text-slate-900">{item.question}</span>
                 <ChevronDown
-                  className={`h-5 w-5 shrink-0 text-primary transition-transform ${
+                  className={`h-5 w-5 shrink-0 text-primary transition-transform duration-200 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"
@@ -49,7 +49,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <p className="px-5 pb-5 text-sm leading-relaxed text-ink-muted">{item.answer}</p>
+                    <p className="px-5 pb-5 text-sm leading-relaxed text-slate-600">{item.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

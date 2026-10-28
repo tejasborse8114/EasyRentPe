@@ -57,10 +57,10 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-semibold tracking-wider text-accent uppercase backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/90 px-3.5 py-1.5 text-xs font-bold tracking-wider text-primary uppercase shadow-sm">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
             </span>
             <span>#1 SMART PG &amp; HOSTEL PLATFORM</span>
           </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="section bg-surface-elevated">
+      <section className="section border-y border-slate-200/80 bg-white">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Everything you need</p>
@@ -221,7 +221,7 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container-page">
-          <div className="card mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+          <div className="card mx-auto flex max-w-3xl flex-col items-center gap-4 text-center border border-slate-200 bg-white shadow-card">
             <p className="eyebrow">Pricing</p>
             <h2 className="text-2xl font-bold text-ink sm:text-3xl">
               Simple, per-bed pricing. No flat platform fees.

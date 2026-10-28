@@ -28,11 +28,11 @@ export default function PropertyTypeCard({
       <ThreeDTiltCard maxTilt={14} scale={1.04} className="h-full">
         <div
           style={{ transformStyle: "preserve-3d" }}
-          className="card flex h-full flex-col items-center text-center border-white/10 bg-surface-elevated/70 backdrop-blur-md hover:border-accent/40 hover:shadow-glow transition-colors"
+          className="card flex h-full flex-col items-center text-center border-slate-200/90 bg-white/95 backdrop-blur-md hover:border-accent/50 hover:shadow-card-hover transition-all"
         >
           <div
             style={{ transform: "translateZ(30px)" }}
-            className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent/25 via-accent/10 to-transparent shadow-md text-accent"
+            className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-accent/15 via-accent/5 to-transparent border border-accent/20 shadow-sm text-accent"
           >
             {icon}
           </div>

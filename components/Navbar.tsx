@@ -1,19 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, SITE_NAME } from "@/lib/site";
+import { motion } from "framer-motion";
+import { NAV_LINKS } from "@/lib/site";
+import { SITE_NAME } from "@/lib/site";
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-surface/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl shadow-xs">
       <nav className="container-page flex h-20 items-center justify-between" aria-label="Main">
         {/* Brand Identity with Circular Logo Badge (rounded-full) */}
         <Link
@@ -22,7 +23,7 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
         >
           {/* Circular Logo Badge */}
-          <div className="relative flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-glow ring-2 ring-white/30 overflow-hidden">
+          <div className="relative flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white p-1 shadow-md ring-1 ring-slate-200/80 overflow-hidden">
             <Image
               src="/images/logo.png"
               alt={`${SITE_NAME} logo`}
@@ -34,11 +35,11 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-2xl sm:text-3xl font-black tracking-tight leading-none">
-              <span className="text-white">Easy</span>
+              <span className="text-[#0F172A]">Easy</span>
               <span className="text-[#0055D4]">Rent</span>
               <span className="text-[#00A859]">Pe</span>
             </span>
-            <span className="mt-1 hidden text-[9px] font-bold uppercase tracking-widest text-ink-muted/80 sm:block">
+            <span className="mt-1 hidden text-[9px] font-bold uppercase tracking-widest text-slate-500 sm:block">
               Hostel Management Made Easy
             </span>
           </div>
@@ -53,14 +54,14 @@ export default function Navbar() {
                   href={link.href}
                   aria-current={active ? "page" : undefined}
                   className={`relative text-sm font-medium transition-colors hover:text-ink ${
-                    active ? "text-accent font-semibold" : "text-ink-muted"
+                    active ? "text-primary font-semibold" : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   {link.label}
                   {active && (
                     <motion.span
                       layoutId="nav-underline"
-                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-accent shadow-[0_0_8px_#10B981]"
+                      className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-primary shadow-[0_0_8px_rgba(0,85,212,0.4)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -78,24 +79,24 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-ink-muted hover:text-ink lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:text-slate-900 lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((prev) => !prev)}
         >
-          {open ? <X className="h-6 w-6 text-ink" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-6 w-6 text-slate-900" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-surface/95 backdrop-blur-xl lg:hidden">
+        <div className="border-t border-slate-200 bg-white/98 shadow-xl backdrop-blur-xl lg:hidden">
           <ul className="container-page flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-white/5 hover:text-accent"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-primary"
                 >
                   {link.label}
                 </Link>

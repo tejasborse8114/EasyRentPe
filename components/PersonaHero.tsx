@@ -21,8 +21,8 @@ export default function PersonaHero({
 }: PersonaPageProps) {
   return (
     <section className="section relative overflow-hidden">
-      <div className="glow-orb -left-16 top-0 h-64 w-64 bg-primary/15" aria-hidden="true" />
-      <div className="glow-orb -right-16 top-20 h-64 w-64 bg-accent/15" aria-hidden="true" />
+      <div className="glow-orb -left-16 top-0 h-64 w-64 bg-primary/10" aria-hidden="true" />
+      <div className="glow-orb -right-16 top-20 h-64 w-64 bg-accent/10" aria-hidden="true" />
       <div className="container-page relative">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -44,10 +44,10 @@ export default function PersonaHero({
               whileHover={{ scale: 1.03, y: -2 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.45, delay: Math.min(index * 0.08, 0.32) }}
-              className="card flex items-center gap-3"
+              className="card flex items-center gap-3 border border-slate-200 bg-white shadow-card hover:shadow-card-hover"
             >
-              <Check className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-              <span className="text-sm font-medium text-ink">{bullet}</span>
+              <Check className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+              <span className="text-sm font-semibold text-slate-800">{bullet}</span>
             </motion.div>
           ))}
         </div>
@@ -68,4 +68,3 @@ export default function PersonaHero({
     </section>
   );
 }
-
