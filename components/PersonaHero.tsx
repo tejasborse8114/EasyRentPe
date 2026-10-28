@@ -20,34 +20,35 @@ export default function PersonaHero({
   ctaLabel,
 }: PersonaPageProps) {
   return (
-    <section className="section relative overflow-hidden">
-      <div className="glow-orb -left-16 top-0 h-64 w-64 bg-violet-600/20" aria-hidden="true" />
-      <div className="glow-orb -right-16 top-20 h-64 w-64 bg-amber-500/20" aria-hidden="true" />
+    <section className="section relative overflow-hidden bg-white">
       <div className="container-page relative">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="eyebrow">{eyebrow}</p>
-          <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">{headline}</h1>
-          <p className="mt-6 text-lg text-slate-300">{body}</p>
+          <div className="inline-flex items-center rounded-full bg-[#E6F7F0] px-3.5 py-1 text-xs font-bold text-[#00A859] mb-3">
+            {eyebrow}
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B2545]">{headline}</h1>
+          <p className="mt-5 text-base sm:text-lg text-slate-500 leading-relaxed">{body}</p>
         </motion.div>
 
         <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
           {bullets.map((bullet, index) => (
             <motion.div
               key={bullet}
-              initial={{ opacity: 0, y: 20, scale: 0.94 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              whileHover={{ scale: 1.03, y: -2 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.45, delay: Math.min(index * 0.08, 0.32) }}
-              className="card flex items-center gap-3 border border-violet-900/30 bg-surface-elevated/90 shadow-card hover:border-primary/50 hover:shadow-glow"
+              transition={{ duration: 0.4, delay: Math.min(index * 0.08, 0.32) }}
+              className="card flex items-center gap-3 border border-slate-200/90 bg-white shadow-sm hover:border-slate-300 p-4 rounded-xl"
             >
-              <Check className="h-5 w-5 shrink-0 text-accent font-bold" aria-hidden="true" />
-              <span className="text-sm font-semibold text-white">{bullet}</span>
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#E6F7F0] text-[#00A859]">
+                <Check className="h-4 w-4 shrink-0 font-bold" aria-hidden="true" />
+              </div>
+              <span className="text-sm font-bold text-[#0B2545]">{bullet}</span>
             </motion.div>
           ))}
         </div>

@@ -14,13 +14,13 @@ export default function StepsList({ steps }: { steps: Step[] }) {
           whileHover={{ scale: 1.03, y: -4 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: Math.min(index * 0.08, 0.32) }}
-          className="card relative h-full border border-violet-900/30 bg-surface-elevated/90 shadow-card hover:border-primary/50 hover:shadow-glow"
+          className="card relative h-full border border-slate-200/90 bg-white p-6 shadow-sm hover:shadow-md hover:border-slate-300"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#7C3AED] to-[#F59E0B] text-sm font-bold text-white shadow-glow">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#00A859] text-sm font-bold text-white shadow-sm">
             {index + 1}
           </span>
-          <h3 className="mt-4 text-base font-bold text-white">{step.title}</h3>
-          <p className="mt-2 text-sm text-slate-400 leading-relaxed">{step.description}</p>
+          <h3 className="mt-4 text-base font-bold text-[#0B2545]">{step.title}</h3>
+          <p className="mt-2 text-sm text-slate-500 leading-relaxed">{step.description}</p>
         </motion.li>
       ))}
     </ol>

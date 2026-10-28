@@ -11,28 +11,28 @@ export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
       {plans.map((plan, index) => (
         <motion.div
           key={plan.name}
-          initial={{ opacity: 0, scale: 0.9, y: 16 }}
+          initial={{ opacity: 0, scale: 0.95, y: 16 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className={`card flex h-full flex-col border border-violet-900/30 bg-surface-elevated/90 backdrop-blur-xl transition-all ${
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+          className={`card flex h-full flex-col border bg-white p-7 shadow-sm transition-all rounded-2xl ${
             plan.highlighted
-              ? "scale-[1.02] border-2 border-[#8B5CF6] shadow-glow ring-2 ring-[#8B5CF6]/30"
-              : "shadow-card hover:shadow-card-hover"
+              ? "border-2 border-[#00A859] shadow-md ring-2 ring-[#00A859]/20"
+              : "border-slate-200 hover:border-slate-300"
           }`}
         >
           {plan.highlighted && (
-            <span className="mb-3 inline-block w-fit rounded-full bg-amber-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-amber-300 border border-amber-500/40">
+            <span className="mb-3 inline-block w-fit rounded-full bg-[#E6F7F0] px-3 py-1 text-xs font-bold uppercase tracking-wide text-[#00A859]">
               Most popular
             </span>
           )}
-          <h3 className="text-xl font-bold text-white">{plan.name}</h3>
-          <p className="mt-1 text-sm text-slate-400">{plan.bestFor}</p>
+          <h3 className="text-xl font-extrabold text-[#0B2545]">{plan.name}</h3>
+          <p className="mt-1 text-sm text-slate-500">{plan.bestFor}</p>
 
           <ul className="mt-6 flex-1 space-y-3">
             {plan.included.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-400 font-bold" aria-hidden="true" />
+              <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#00A859] font-bold" aria-hidden="true" />
                 <span>{item}</span>
               </li>
             ))}
@@ -40,7 +40,7 @@ export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
 
           <Link
             href="/contact"
-            className={plan.highlighted ? "btn-primary mt-8 w-full" : "btn-secondary mt-8 w-full"}
+            className={plan.highlighted ? "btn-primary mt-8 w-full text-center" : "btn-secondary mt-8 w-full text-center"}
           >
             Talk to Sales
           </Link>

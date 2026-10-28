@@ -58,9 +58,9 @@ export default function DemoForm() {
 
   if (submitted) {
     return (
-      <div className="card flex flex-col items-center gap-3 py-12 text-center border border-violet-900/30 bg-surface-elevated/90 shadow-2xl backdrop-blur-xl">
-        <CheckCircle2 className="h-10 w-10 text-amber-400" aria-hidden="true" />
-        <h3 className="text-xl font-bold text-white">Thanks! Our team will reach out within one business day.</h3>
+      <div className="card flex flex-col items-center gap-3 py-12 text-center border border-slate-200 bg-white shadow-md rounded-2xl">
+        <CheckCircle2 className="h-10 w-10 text-[#00A859]" aria-hidden="true" />
+        <h3 className="text-xl font-bold text-[#0B2545]">Thanks! Our team will reach out within one business day.</h3>
         <button
           type="button"
           onClick={() => setSubmitted(false)}
@@ -73,13 +73,13 @@ export default function DemoForm() {
   }
 
   const inputClass =
-    "mt-1.5 w-full rounded-xl border border-violet-900/40 bg-white/5 px-4 py-2.5 text-base sm:text-sm text-white placeholder:text-slate-500 focus:bg-white/10 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all";
+    "mt-1.5 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#00A859] focus:outline-none focus:ring-2 focus:ring-[#00A859]/20 transition-all";
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="card space-y-5 border border-violet-900/30 bg-surface-elevated/90 shadow-2xl backdrop-blur-xl">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="card space-y-5 border border-slate-200 bg-white shadow-md p-6 sm:p-8 rounded-2xl">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="block text-sm font-semibold text-slate-200">
+          <label htmlFor="fullName" className="block text-sm font-semibold text-slate-700">
             Full name
           </label>
           <input
@@ -92,14 +92,14 @@ export default function DemoForm() {
             {...register("fullName")}
           />
           {errors.fullName && (
-            <p id="fullName-error" role="alert" className="mt-1.5 text-xs text-rose-400 font-medium">
+            <p id="fullName-error" role="alert" className="mt-1.5 text-xs text-rose-500 font-medium">
               {errors.fullName.message}
             </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-slate-200">
+          <label htmlFor="phone" className="block text-sm font-semibold text-slate-700">
             Phone number
           </label>
           <input
@@ -112,7 +112,7 @@ export default function DemoForm() {
             {...register("phone")}
           />
           {errors.phone && (
-            <p id="phone-error" role="alert" className="mt-1.5 text-xs text-rose-400 font-medium">
+            <p id="phone-error" role="alert" className="mt-1.5 text-xs text-rose-500 font-medium">
               {errors.phone.message}
             </p>
           )}
@@ -120,7 +120,7 @@ export default function DemoForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-slate-200">
+        <label htmlFor="email" className="block text-sm font-semibold text-slate-700">
           Email
         </label>
         <input
@@ -133,7 +133,7 @@ export default function DemoForm() {
           {...register("email")}
         />
         {errors.email && (
-          <p id="email-error" role="alert" className="mt-1.5 text-xs text-rose-400 font-medium">
+          <p id="email-error" role="alert" className="mt-1.5 text-xs text-rose-500 font-medium">
             {errors.email.message}
           </p>
         )}
@@ -141,7 +141,7 @@ export default function DemoForm() {
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="propertyName" className="block text-sm font-semibold text-slate-200">
+          <label htmlFor="propertyName" className="block text-sm font-semibold text-slate-700">
             Property name
           </label>
           <input
@@ -153,14 +153,14 @@ export default function DemoForm() {
             {...register("propertyName")}
           />
           {errors.propertyName && (
-            <p id="propertyName-error" role="alert" className="mt-1.5 text-xs text-rose-400 font-medium">
+            <p id="propertyName-error" role="alert" className="mt-1.5 text-xs text-rose-500 font-medium">
               {errors.propertyName.message}
             </p>
           )}
         </div>
 
         <div>
-          <label htmlFor="numberOfBeds" className="block text-sm font-semibold text-slate-200">
+          <label htmlFor="numberOfBeds" className="block text-sm font-semibold text-slate-700">
             Number of beds
           </label>
           <input
@@ -173,7 +173,7 @@ export default function DemoForm() {
             {...register("numberOfBeds")}
           />
           {errors.numberOfBeds && (
-            <p id="numberOfBeds-error" role="alert" className="mt-1.5 text-xs text-rose-400 font-medium">
+            <p id="numberOfBeds-error" role="alert" className="mt-1.5 text-xs text-rose-500 font-medium">
               {errors.numberOfBeds.message}
             </p>
           )}
@@ -181,26 +181,26 @@ export default function DemoForm() {
       </div>
 
       <fieldset>
-        <legend className="block text-sm font-semibold text-slate-200">Property type</legend>
+        <legend className="block text-sm font-semibold text-slate-700">Property type</legend>
         <div className="mt-2 flex gap-5">
-          <label className="flex items-center gap-2 text-sm font-medium text-slate-300 cursor-pointer">
-            <input type="radio" value="hostel" className="h-4 w-4 text-primary focus:ring-primary" {...register("propertyType")} />
+          <label className="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
+            <input type="radio" value="hostel" className="h-4 w-4 text-[#00A859] focus:ring-[#00A859]" {...register("propertyType")} />
             Hostel
           </label>
-          <label className="flex items-center gap-2 text-sm font-medium text-slate-300 cursor-pointer">
-            <input type="radio" value="pg" className="h-4 w-4 text-primary focus:ring-primary" {...register("propertyType")} />
+          <label className="flex items-center gap-2 text-sm font-medium text-slate-700 cursor-pointer">
+            <input type="radio" value="pg" className="h-4 w-4 text-[#00A859] focus:ring-[#00A859]" {...register("propertyType")} />
             PG
           </label>
         </div>
         {errors.propertyType && (
-          <p role="alert" className="mt-1.5 text-xs text-rose-400 font-medium">
+          <p role="alert" className="mt-1.5 text-xs text-rose-500 font-medium">
             {errors.propertyType.message}
           </p>
         )}
       </fieldset>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-slate-200">
+        <label htmlFor="message" className="block text-sm font-semibold text-slate-700">
           Message <span className="text-slate-400 font-normal">(optional)</span>
         </label>
         <textarea

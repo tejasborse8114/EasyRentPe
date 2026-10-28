@@ -66,7 +66,7 @@ export default function CustomCursor() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {/* Outer Smooth Trailing Ring (Electric Violet & Solar Amber) */}
+      {/* Outer Smooth Trailing Ring (Navy & Emerald Teal) */}
       <motion.div
         style={{
           x: smoothX,
@@ -75,12 +75,12 @@ export default function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isClicking ? 0.75 : isHovered ? 2.2 : 1,
-          borderColor: isHovered ? "rgba(245, 158, 11, 0.9)" : "rgba(139, 92, 246, 0.75)",
-          backgroundColor: isHovered ? "rgba(245, 158, 11, 0.15)" : "transparent",
+          scale: isClicking ? 0.75 : isHovered ? 1.8 : 1,
+          borderColor: isHovered ? "rgba(0, 168, 89, 0.8)" : "rgba(11, 37, 69, 0.35)",
+          backgroundColor: isHovered ? "rgba(0, 168, 89, 0.08)" : "transparent",
         }}
         transition={{ type: "spring", stiffness: 450, damping: 25 }}
-        className="h-9 w-9 rounded-full border border-primary/50 backdrop-blur-[1px]"
+        className="h-8 w-8 rounded-full border"
       />
 
       {/* Inner Precision Dot */}
@@ -95,7 +95,7 @@ export default function CustomCursor() {
           scale: isClicking ? 0.5 : isHovered ? 0 : 1,
         }}
         transition={{ duration: 0.15 }}
-        className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_#F59E0B]"
+        className="h-1.5 w-1.5 rounded-full bg-[#00A859]"
       />
     </div>
   );

@@ -41,13 +41,13 @@ export default function ThreeDBackground() {
     const BOUND_Y = isMobile ? 240 : 320;
     const BOUND_Z = isMobile ? 300 : 400;
 
-    // Deep Void Violet & Solar Amber Palette
+    // Electric Neo-Mint & Laser Cyan Palette
     const colors = [
-      "rgba(139, 92, 246, ",  // Electric Violet
-      "rgba(167, 139, 250, ", // Luminous Lavender
-      "rgba(245, 158, 11, ",  // Solar Amber
-      "rgba(251, 191, 36, ",  // Radiant Sun Gold
-      "rgba(192, 132, 252, ", // Amethyst Light
+      "rgba(0, 245, 155, ",  // Electric Neo-Mint
+      "rgba(94, 234, 212, ", // Mint Ice
+      "rgba(0, 210, 255, ",  // Laser Cyan
+      "rgba(56, 189, 248, ", // Sky Laser
+      "rgba(16, 185, 129, ", // Cyber Emerald
     ];
 
     const particles: Particle3D[] = [];
@@ -160,7 +160,7 @@ export default function ThreeDBackground() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(139, 92, 246, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(0, 245, 155, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
@@ -173,7 +173,7 @@ export default function ThreeDBackground() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, Math.max(0.8, p.radius), 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${p.alpha})`;
-        ctx.shadowColor = p.color.includes("245") || p.color.includes("251") ? "#F59E0B" : "#8B5CF6";
+        ctx.shadowColor = p.color.includes("210") || p.color.includes("189") ? "#00D2FF" : "#00F59B";
         ctx.shadowBlur = p.scale * 8;
         ctx.fill();
       }

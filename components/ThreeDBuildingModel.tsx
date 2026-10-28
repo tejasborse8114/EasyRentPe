@@ -48,15 +48,15 @@ export default function ThreeDBuildingModel() {
   return (
     <div className="relative mx-auto w-full max-w-4xl py-6 [perspective:1600px]">
       {/* 3D Model Header Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-violet-900/30 pb-4 mb-8">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-emerald-900/30 pb-4 mb-8">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/20 text-[#A78BFA] shadow-glow">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/20 text-[#00F59B] shadow-glow">
             <Layers className="h-5 w-5" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <span>Interactive 3D Digital Twin</span>
-              <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold text-amber-300 border border-amber-500/40">
+              <span className="rounded-full bg-cyan-500/20 px-2 py-0.5 text-[10px] font-bold text-cyan-300 border border-cyan-500/40">
                 Live 3D Engine
               </span>
             </h3>
@@ -65,13 +65,13 @@ export default function ThreeDBuildingModel() {
         </div>
 
         {/* View mode toggle buttons */}
-        <div className="flex items-center gap-1.5 rounded-xl border border-violet-900/40 bg-white/5 p-1 text-xs">
+        <div className="flex items-center gap-1.5 rounded-xl border border-emerald-900/40 bg-white/5 p-1 text-xs">
           <button
             type="button"
             onClick={() => setViewMode("orbit")}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all ${
               viewMode === "orbit"
-                ? "bg-[#8B5CF6] text-white shadow-glow"
+                ? "bg-[#00F59B] text-[#02140D] shadow-glow"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -83,7 +83,7 @@ export default function ThreeDBuildingModel() {
             onClick={() => setViewMode("explode")}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all ${
               viewMode === "explode"
-                ? "bg-[#F59E0B] text-slate-950 shadow-glow-accent"
+                ? "bg-[#00D2FF] text-[#02140D] shadow-glow-accent"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -95,7 +95,7 @@ export default function ThreeDBuildingModel() {
             onClick={() => setViewMode("xray")}
             className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-bold transition-all ${
               viewMode === "xray"
-                ? "bg-emerald-500 text-slate-950 shadow-sm"
+                ? "bg-teal-400 text-[#02140D] shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -110,11 +110,11 @@ export default function ThreeDBuildingModel() {
         ref={containerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={resetRotation}
-        className="relative mx-auto h-[480px] sm:h-[560px] w-full cursor-grab select-none overflow-hidden rounded-3xl border border-violet-900/40 bg-gradient-to-b from-[#0B0816] via-[#080512] to-[#040208] p-6 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] backdrop-blur-2xl active:cursor-grabbing"
+        className="relative mx-auto h-[480px] sm:h-[560px] w-full cursor-grab select-none overflow-hidden rounded-3xl border border-emerald-900/40 bg-gradient-to-b from-[#07130F] via-[#050C0A] to-[#020504] p-6 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] backdrop-blur-2xl active:cursor-grabbing"
       >
         {/* Ambient 3D lights and glow orbs inside stage */}
-        <div className="pointer-events-none absolute left-1/4 top-10 h-72 w-72 rounded-full bg-violet-600/15 blur-3xl" />
-        <div className="pointer-events-none absolute right-1/4 bottom-10 h-72 w-72 rounded-full bg-amber-500/15 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/4 top-10 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl" />
+        <div className="pointer-events-none absolute right-1/4 bottom-10 h-72 w-72 rounded-full bg-cyan-500/15 blur-3xl" />
 
         {/* 3D Isometric Coordinate Stage */}
         <motion.div
@@ -137,14 +137,14 @@ export default function ThreeDBuildingModel() {
             onMouseLeave={() => setActiveFloor(null)}
             className={`absolute inset-0 rounded-3xl border p-4 transition-all duration-300 ${
               activeFloor === 3
-                ? "border-amber-400 bg-[#160F2B]/95 shadow-[0_0_40px_rgba(245,158,11,0.4)]"
-                : "border-violet-500/40 bg-[#120B24]/90 shadow-2xl"
+                ? "border-cyan-400 bg-[#091D17]/95 shadow-[0_0_40px_rgba(0,210,255,0.4)]"
+                : "border-emerald-500/40 bg-[#071611]/90 shadow-2xl"
             }`}
           >
             {/* Rooftop Solar Panels & High-speed WiFi */}
-            <div className="flex items-center justify-between border-b border-violet-500/30 pb-2">
-              <span className="text-[11px] font-bold text-amber-300 flex items-center gap-1">
-                <Zap className="h-3.5 w-3.5 text-amber-400" /> Floor 3 • Rooftop &amp; Solar
+            <div className="flex items-center justify-between border-b border-emerald-500/30 pb-2">
+              <span className="text-[11px] font-bold text-cyan-300 flex items-center gap-1">
+                <Zap className="h-3.5 w-3.5 text-cyan-400" /> Floor 3 • Rooftop &amp; Solar
               </span>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[9px] font-bold text-emerald-300">
                 100% Power Active
@@ -152,15 +152,15 @@ export default function ThreeDBuildingModel() {
             </div>
 
             <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-              <div className="rounded-xl border border-violet-800/40 bg-white/5 p-2 text-center">
-                <Wifi className="mx-auto h-4 w-4 text-[#A78BFA]" />
+              <div className="rounded-xl border border-emerald-800/40 bg-white/5 p-2 text-center">
+                <Wifi className="mx-auto h-4 w-4 text-[#00F59B]" />
                 <p className="mt-1 text-[10px] text-white font-semibold">Dual ISP Mesh WiFi</p>
                 <p className="text-[9px] text-emerald-400">300 Mbps Live</p>
               </div>
-              <div className="rounded-xl border border-violet-800/40 bg-white/5 p-2 text-center">
-                <Zap className="mx-auto h-4 w-4 text-amber-400" />
+              <div className="rounded-xl border border-emerald-800/40 bg-white/5 p-2 text-center">
+                <Zap className="mx-auto h-4 w-4 text-cyan-400" />
                 <p className="mt-1 text-[10px] text-white font-semibold">Solar Inverter</p>
-                <p className="text-[9px] text-amber-300">Auto Backup ON</p>
+                <p className="text-[9px] text-cyan-300">Auto Backup ON</p>
               </div>
             </div>
           </motion.div>
@@ -177,15 +177,15 @@ export default function ThreeDBuildingModel() {
             onMouseLeave={() => setActiveFloor(null)}
             className={`absolute inset-0 rounded-3xl border p-4 transition-all duration-300 ${
               activeFloor === 2 || viewMode === "xray"
-                ? "border-violet-400 bg-[#160E2E]/95 shadow-[0_0_40px_rgba(139,92,246,0.4)]"
-                : "border-violet-500/40 bg-[#0F0920]/90 shadow-2xl"
+                ? "border-emerald-400 bg-[#0A1A14]/95 shadow-[0_0_40px_rgba(0,245,155,0.4)]"
+                : "border-emerald-500/40 bg-[#06140F]/90 shadow-2xl"
             }`}
           >
-            <div className="flex items-center justify-between border-b border-violet-500/30 pb-2">
-              <span className="text-[11px] font-bold text-[#A78BFA] flex items-center gap-1">
-                <BedDouble className="h-3.5 w-3.5 text-violet-400" /> Floor 2 • Smart Rooms (201-206)
+            <div className="flex items-center justify-between border-b border-emerald-500/30 pb-2">
+              <span className="text-[11px] font-bold text-[#00F59B] flex items-center gap-1">
+                <BedDouble className="h-3.5 w-3.5 text-emerald-400" /> Floor 2 • Smart Rooms (201-206)
               </span>
-              <span className="rounded-full bg-violet-500/20 px-2 py-0.5 text-[9px] font-bold text-[#A78BFA]">
+              <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[9px] font-bold text-[#00F59B]">
                 16/18 Occupied
               </span>
             </div>
@@ -212,10 +212,10 @@ export default function ThreeDBuildingModel() {
                   }
                   className={`rounded-xl border p-2 text-center transition-all hover:scale-105 active:scale-95 ${
                     bed.status === "paid"
-                      ? "border-violet-500/40 bg-violet-950/40 text-violet-200"
+                      ? "border-emerald-500/40 bg-emerald-950/40 text-emerald-200"
                       : bed.status === "due"
                       ? "border-amber-500/50 bg-amber-950/50 text-amber-200 animate-pulse"
-                      : "border-emerald-500/50 bg-emerald-950/40 text-emerald-200"
+                      : "border-cyan-500/50 bg-cyan-950/40 text-cyan-200"
                   }`}
                 >
                   <p className="text-[10px] font-bold">{bed.id}</p>
@@ -237,11 +237,11 @@ export default function ThreeDBuildingModel() {
             onMouseLeave={() => setActiveFloor(null)}
             className={`absolute inset-0 rounded-3xl border p-4 transition-all duration-300 ${
               activeFloor === 1
-                ? "border-emerald-400 bg-[#160E2E]/95 shadow-[0_0_40px_rgba(16,185,129,0.4)]"
-                : "border-violet-500/40 bg-[#0A0518]/90 shadow-2xl"
+                ? "border-emerald-400 bg-[#091813]/95 shadow-[0_0_40px_rgba(0,245,155,0.4)]"
+                : "border-emerald-500/40 bg-[#05100D]/90 shadow-2xl"
             }`}
           >
-            <div className="flex items-center justify-between border-b border-violet-500/30 pb-2">
+            <div className="flex items-center justify-between border-b border-emerald-500/30 pb-2">
               <span className="text-[11px] font-bold text-emerald-300 flex items-center gap-1">
                 <QrCode className="h-3.5 w-3.5 text-emerald-400" /> Floor 1 • Digital Reception &amp; UPI
               </span>
@@ -250,7 +250,7 @@ export default function ThreeDBuildingModel() {
               </span>
             </div>
 
-            <div className="mt-3 flex items-center justify-between gap-2 rounded-xl border border-violet-800/40 bg-white/5 p-2.5">
+            <div className="mt-3 flex items-center justify-between gap-2 rounded-xl border border-emerald-800/40 bg-white/5 p-2.5">
               <div className="flex items-center gap-2">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-300">
                   <ShieldCheck className="h-4 w-4" />
@@ -260,26 +260,26 @@ export default function ThreeDBuildingModel() {
                   <p className="text-[9px] text-slate-400">Direct-to-bank settlement</p>
                 </div>
               </div>
-              <span className="text-xs font-black text-amber-300">₹5.42L</span>
+              <span className="text-xs font-black text-cyan-300">₹5.42L</span>
             </div>
           </motion.div>
         </motion.div>
 
         {/* Live Inspector Bar at bottom of stage */}
-        <div className="absolute inset-x-4 bottom-4 flex flex-col sm:flex-row items-center justify-between gap-2 rounded-2xl border border-violet-900/40 bg-[#06040A]/90 px-4 py-2.5 shadow-xl backdrop-blur-xl">
+        <div className="absolute inset-x-4 bottom-4 flex flex-col sm:flex-row items-center justify-between gap-2 rounded-2xl border border-emerald-900/40 bg-[#030706]/90 px-4 py-2.5 shadow-xl backdrop-blur-xl">
           <div className="flex items-center gap-2 text-xs">
-            <Sparkles className="h-4 w-4 text-amber-400" />
+            <Sparkles className="h-4 w-4 text-cyan-400" />
             <span className="font-semibold text-white">{selectedBedInfo || "Click any bed to inspect live rent status"}</span>
           </div>
           <div className="flex items-center gap-4 text-[10px] text-slate-400">
             <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-violet-400" /> Paid
+              <span className="h-2 w-2 rounded-full bg-emerald-400" /> Paid
             </span>
             <span className="flex items-center gap-1">
               <span className="h-2 w-2 rounded-full bg-amber-400" /> Due
             </span>
             <span className="flex items-center gap-1">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" /> Vacant
+              <span className="h-2 w-2 rounded-full bg-cyan-400" /> Vacant
             </span>
           </div>
         </div>

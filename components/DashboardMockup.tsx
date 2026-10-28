@@ -61,7 +61,7 @@ export default function DashboardMockup() {
     >
       {/* Background glow orb that responds to hover */}
       <div
-        className={`glow-orb -inset-10 transition-opacity duration-700 bg-gradient-to-tr from-primary/30 via-accent/20 to-violet-800/10 ${
+        className={`glow-orb -inset-10 transition-opacity duration-700 bg-gradient-to-tr from-primary/30 via-accent/20 to-teal-800/10 ${
           isHovered ? "opacity-90 scale-105" : "opacity-50"
         }`}
         aria-hidden="true"
@@ -80,10 +80,10 @@ export default function DashboardMockup() {
         {/* Layer 0: Base Glass Owner Dashboard Window (translateZ: 0px) */}
         <div
           style={{ transform: "translateZ(0px)" }}
-          className="relative rounded-3xl border border-violet-900/40 bg-[#0B0816]/95 p-4 sm:p-6 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.85)] backdrop-blur-2xl transition-colors duration-300 hover:border-violet-700/50"
+          className="relative rounded-3xl border border-emerald-900/40 bg-[#07130F]/95 p-4 sm:p-6 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.85)] backdrop-blur-2xl transition-colors duration-300 hover:border-emerald-500/50"
         >
           {/* Window Top Bar with macOS-style dots and Property Status */}
-          <div className="flex items-center justify-between border-b border-violet-900/30 pb-3">
+          <div className="flex items-center justify-between border-b border-emerald-900/30 pb-3">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-rose-500 shadow-sm" />
               <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-400 shadow-sm" />
@@ -92,8 +92,8 @@ export default function DashboardMockup() {
                 EasyRentPe Cloud OS
               </span>
             </div>
-            <div className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold text-amber-300">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
+            <div className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-[11px] font-semibold text-cyan-300">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400" />
               Live Sync
             </div>
           </div>
@@ -106,7 +106,7 @@ export default function DashboardMockup() {
               </p>
               <h4 className="text-sm sm:text-base font-bold text-white">Elite Co-Living &amp; Hostel</h4>
             </div>
-            <span className="rounded-full bg-violet-500/15 border border-violet-500/30 px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold text-[#A78BFA]">
+            <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 sm:py-1 text-[11px] sm:text-xs font-semibold text-[#00F59B]">
               92 Beds Total
             </span>
           </div>
@@ -117,12 +117,12 @@ export default function DashboardMockup() {
             className="mt-3 sm:mt-4 grid grid-cols-2 gap-2.5 sm:gap-4"
           >
             {/* Rent Collected Card - Left Priority */}
-            <div className="rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/60 via-purple-950/30 to-transparent p-3 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+            <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-emerald-950/60 via-teal-950/30 to-transparent p-3 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-violet-500/20 text-[#A78BFA]">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-emerald-500/20 text-[#00F59B]">
                   <Wallet className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="rounded-full bg-amber-500/20 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold text-amber-300 border border-amber-500/30">
+                <span className="rounded-full bg-cyan-500/20 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold text-cyan-300 border border-cyan-500/30">
                   94% On Time
                 </span>
               </div>
@@ -131,12 +131,12 @@ export default function DashboardMockup() {
             </div>
 
             {/* Occupancy Card - Right */}
-            <div className="rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-950/50 via-orange-950/20 to-transparent p-3 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+            <div className="rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/50 via-teal-950/20 to-transparent p-3 sm:p-4 shadow-lg backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
               <div className="flex items-center justify-between">
-                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-amber-500/20 text-[#FBBF24]">
+                <div className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-xl bg-cyan-500/20 text-[#00D2FF]">
                   <BedDouble className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </div>
-                <span className="flex items-center text-[9px] sm:text-[10px] font-bold text-amber-300">
+                <span className="flex items-center text-[9px] sm:text-[10px] font-bold text-cyan-300">
                   <TrendingUp className="mr-0.5 h-3 w-3" /> +8%
                 </span>
               </div>
@@ -150,18 +150,18 @@ export default function DashboardMockup() {
             {/* Real-time Rent Collection Target (translateZ: 20px) */}
             <div
               style={{ transform: "translateZ(20px)" }}
-              className="flex-1 rounded-xl border border-violet-900/30 bg-white/5 p-2.5 sm:p-3"
+              className="flex-1 rounded-xl border border-emerald-900/30 bg-white/5 p-2.5 sm:p-3"
             >
               <div className="flex items-center justify-between text-[11px] sm:text-xs">
                 <span className="text-slate-300 font-medium">Monthly Target</span>
-                <span className="font-bold text-[#A78BFA]">86% Achieved</span>
+                <span className="font-bold text-[#00F59B]">86% Achieved</span>
               </div>
               <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-white/10">
-                <div className="h-full w-[86%] rounded-full bg-gradient-to-r from-[#7C3AED] via-[#8B5CF6] to-[#F59E0B] shadow-sm" />
+                <div className="h-full w-[86%] rounded-full bg-gradient-to-r from-[#00F59B] via-[#05E2A5] to-[#00D2FF] shadow-sm" />
               </div>
               <div className="mt-2 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400">
                 <span>Auto-notices: 14</span>
-                <span className="text-amber-300 font-semibold">0 disputes</span>
+                <span className="text-cyan-300 font-semibold">0 disputes</span>
               </div>
             </div>
 
@@ -171,7 +171,7 @@ export default function DashboardMockup() {
                 style={{
                   transform: "translateZ(70px) rotateY(-6deg) rotateX(2deg)",
                 }}
-                className="w-44 rounded-2xl border border-violet-800/40 bg-gradient-to-b from-[#140E26] via-[#0D091A] to-[#05030A] p-3 shadow-2xl backdrop-blur-2xl transition-transform duration-500 hover:scale-[1.04]"
+                className="w-44 rounded-2xl border border-emerald-800/40 bg-gradient-to-b from-[#0B1A15] via-[#08130F] to-[#040A08] p-3 shadow-2xl backdrop-blur-2xl transition-transform duration-500 hover:scale-[1.04]"
               >
                 {/* Phone Dynamic Notch */}
                 <div className="mx-auto flex h-2.5 w-12 items-center justify-center rounded-full bg-black/80">
@@ -182,24 +182,24 @@ export default function DashboardMockup() {
                 {/* Tenant App Screen Header */}
                 <div className="mt-1.5 flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Smartphone className="h-3 w-3 text-violet-400" />
+                    <Smartphone className="h-3 w-3 text-emerald-400" />
                     <span className="text-[10px] font-bold uppercase tracking-wider text-white/90">
                       Tenant App
                     </span>
                   </div>
-                  <span className="flex h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
 
                 {/* Tenant Rent Card */}
-                <div className="mt-2 rounded-xl border border-amber-500/30 bg-gradient-to-br from-violet-500/20 to-amber-500/20 p-2 text-white">
+                <div className="mt-2 rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 p-2 text-white">
                   <div className="flex items-center justify-between text-[9px] text-white/80">
                     <span>Room 204 • Bed A</span>
-                    <span className="rounded bg-amber-500/30 px-1 py-0.5 text-[8px] font-bold text-amber-300">
+                    <span className="rounded bg-emerald-500/30 px-1 py-0.5 text-[8px] font-bold text-emerald-300">
                       Due Today
                     </span>
                   </div>
                   <p className="mt-0.5 text-xs font-black">₹ 7,500</p>
-                  <div className="mt-1.5 flex w-full items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-[#8B5CF6] to-[#F59E0B] py-1 text-[10px] font-bold text-white shadow-sm">
+                  <div className="mt-1.5 flex w-full items-center justify-center gap-1 rounded-lg bg-gradient-to-r from-[#00F59B] to-[#00D2FF] py-1 text-[10px] font-extrabold text-[#02140D] shadow-sm">
                     <span>Pay via UPI / Cash</span>
                     <ArrowUpRight className="h-2.5 w-2.5" />
                   </div>
@@ -207,7 +207,7 @@ export default function DashboardMockup() {
 
                 {/* Tenant Notification Chip */}
                 <div className="mt-1.5 flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 p-1.5 text-[9px] text-slate-300">
-                  <CheckCircle className="h-3 w-3 shrink-0 text-amber-400" />
+                  <CheckCircle className="h-3 w-3 shrink-0 text-cyan-400" />
                   <span className="leading-tight text-[9px]">WiFi ticket resolved</span>
                 </div>
               </div>
@@ -220,17 +220,17 @@ export default function DashboardMockup() {
           style={{
             transform: "translateZ(85px) rotateZ(2deg)",
           }}
-          className="pointer-events-none absolute -top-5 -right-3 hidden sm:flex items-center gap-2.5 rounded-2xl border border-violet-500/40 bg-[#0E0A18]/95 px-3.5 py-2.5 shadow-glow backdrop-blur-xl"
+          className="pointer-events-none absolute -top-5 -right-3 hidden sm:flex items-center gap-2.5 rounded-2xl border border-emerald-500/40 bg-[#081611]/95 px-3.5 py-2.5 shadow-glow backdrop-blur-xl"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-violet-500/20 text-[#A78BFA]">
+          <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/20 text-[#00F59B]">
             <ShieldCheck className="h-4 w-4" />
           </div>
           <div>
             <div className="flex items-center gap-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-ping" />
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
               <p className="text-[11px] font-bold text-white">UPI Verified</p>
             </div>
-            <p className="text-[10px] text-amber-300 font-semibold">+₹8,500 deposited</p>
+            <p className="text-[10px] text-emerald-300 font-semibold">+₹8,500 deposited</p>
           </div>
         </div>
 
@@ -239,9 +239,9 @@ export default function DashboardMockup() {
           style={{
             transform: "translateZ(65px) rotateZ(-3deg)",
           }}
-          className="pointer-events-none absolute -bottom-4 -left-3 hidden sm:flex items-center gap-2 rounded-2xl border border-amber-500/40 bg-[#0E0A18]/95 px-3 py-2 shadow-glow-accent backdrop-blur-xl"
+          className="pointer-events-none absolute -bottom-4 -left-3 hidden sm:flex items-center gap-2 rounded-2xl border border-cyan-500/40 bg-[#081611]/95 px-3 py-2 shadow-glow-accent backdrop-blur-xl"
         >
-          <Zap className="h-3.5 w-3.5 text-amber-400" />
+          <Zap className="h-3.5 w-3.5 text-cyan-400" />
           <span className="text-[10px] font-bold text-white">Govt ID &amp; OTP Approved</span>
         </div>
       </motion.div>

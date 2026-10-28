@@ -23,26 +23,28 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="section">
+    <section className="section bg-white">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow">Request a demo</p>
-          <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">
+          <div className="inline-flex items-center rounded-full bg-[#E6F7F0] px-3.5 py-1 text-xs font-bold text-[#00A859] mb-3">
+            Request a demo
+          </div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B2545]">
             See Easy RentPe in Action
           </h1>
-          <p className="mt-4 text-lg text-slate-300">
+          <p className="mt-4 text-base sm:text-lg text-slate-500">
             Tell us about your property and we&apos;ll set up a personalized walkthrough.
           </p>
         </div>
 
         <div className="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-4">
-          <a href={`tel:${SUPPORT_PHONE_TEL}`} className="btn-secondary">
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            Call: {SUPPORT_PHONE_DISPLAY}
+          <a href={`tel:${SUPPORT_PHONE_TEL}`} className="btn-secondary flex items-center gap-2">
+            <Phone className="h-4 w-4 text-[#00A859]" aria-hidden="true" />
+            <span>Call: {SUPPORT_PHONE_DISPLAY}</span>
           </a>
-          <a href={`mailto:${SUPPORT_EMAIL}`} className="btn-secondary">
-            <Mail className="h-4 w-4" aria-hidden="true" />
-            Email: {SUPPORT_EMAIL}
+          <a href={`mailto:${SUPPORT_EMAIL}`} className="btn-secondary flex items-center gap-2">
+            <Mail className="h-4 w-4 text-[#00A859]" aria-hidden="true" />
+            <span>Email: {SUPPORT_EMAIL}</span>
           </a>
         </div>
 

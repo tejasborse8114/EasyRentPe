@@ -24,14 +24,16 @@ export const metadata: Metadata = {
 export default function HowItWorksPage() {
   return (
     <>
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Onboarding</p>
-            <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">
+            <div className="inline-flex items-center rounded-full bg-[#E6F7F0] px-3.5 py-1 text-xs font-bold text-[#00A859] mb-3">
+              Onboarding
+            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B2545]">
               Get up and running in a few simple steps
             </h1>
-            <p className="mt-4 text-lg text-slate-300">
+            <p className="mt-4 text-base sm:text-lg text-slate-500">
               From adding your first property to scaling with a team of managers.
             </p>
           </div>

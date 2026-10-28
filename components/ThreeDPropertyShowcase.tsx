@@ -61,11 +61,11 @@ export default function ThreeDPropertyShowcase() {
   const [selectedProperty, setSelectedProperty] = useState<Property3D>(PROPERTIES_3D[0]);
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-24 border-y border-violet-900/30 bg-[#06040A]">
+    <section className="relative overflow-hidden py-16 sm:py-24 border-y border-emerald-900/30 bg-[#030706]">
       <div className="container-page relative z-10">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#A78BFA]">
-            <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#00F59B]">
+            <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
             <span>Multi-Property Operating System</span>
           </div>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
@@ -86,8 +86,8 @@ export default function ThreeDPropertyShowcase() {
                   onClick={() => setSelectedProperty(prop)}
                   className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold transition-all ${
                     isSelected
-                      ? "bg-gradient-to-r from-[#7C3AED] to-[#F59E0B] text-white shadow-glow scale-105"
-                      : "border border-violet-900/40 bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white"
+                      ? "bg-gradient-to-r from-[#00F59B] to-[#00D2FF] text-[#02140D] shadow-glow scale-105"
+                      : "border border-emerald-900/40 bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   <Building2 className="h-4 w-4" />
@@ -109,17 +109,17 @@ export default function ThreeDPropertyShowcase() {
                 exit={{ opacity: 0, y: -20, scale: 0.96 }}
                 transition={{ duration: 0.4 }}
                 style={{ transformStyle: "preserve-3d" }}
-                className="relative overflow-hidden rounded-3xl border border-violet-500/30 bg-gradient-to-br from-[#120B24] via-[#0E0A1A] to-[#06040A] p-6 sm:p-10 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] backdrop-blur-2xl"
+                className="relative overflow-hidden rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-[#091A14] via-[#06120E] to-[#030706] p-6 sm:p-10 shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] backdrop-blur-2xl"
               >
                 <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
                   {/* Left Column: Property Metrics & Specs */}
                   <div className="lg:col-span-7 space-y-6">
                     <div className="flex items-center justify-between">
-                      <span className="rounded-full bg-violet-500/20 px-3 py-1 text-xs font-bold text-[#A78BFA] border border-violet-500/30">
+                      <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-bold text-[#00F59B] border border-emerald-500/30">
                         {selectedProperty.category}
                       </span>
-                      <span className="flex items-center gap-1 text-xs font-bold text-amber-300">
-                        <TrendingUp className="h-4 w-4 text-amber-400" />
+                      <span className="flex items-center gap-1 text-xs font-bold text-cyan-300">
+                        <TrendingUp className="h-4 w-4 text-cyan-400" />
                         {selectedProperty.occupancy}% Occupancy
                       </span>
                     </div>
@@ -135,21 +135,21 @@ export default function ThreeDPropertyShowcase() {
 
                     {/* Key Metrics Chips */}
                     <div className="grid grid-cols-3 gap-3">
-                      <div className="rounded-2xl border border-violet-900/40 bg-white/5 p-3 text-center">
-                        <BedDouble className="mx-auto h-5 w-5 text-[#A78BFA]" />
+                      <div className="rounded-2xl border border-emerald-900/40 bg-white/5 p-3 text-center">
+                        <BedDouble className="mx-auto h-5 w-5 text-[#00F59B]" />
                         <p className="mt-1 text-lg font-black text-white">{selectedProperty.beds}</p>
                         <p className="text-[10px] text-slate-400 uppercase font-semibold">Total Beds</p>
                       </div>
 
-                      <div className="rounded-2xl border border-violet-900/40 bg-white/5 p-3 text-center">
-                        <Users className="mx-auto h-5 w-5 text-amber-400" />
+                      <div className="rounded-2xl border border-emerald-900/40 bg-white/5 p-3 text-center">
+                        <Users className="mx-auto h-5 w-5 text-cyan-400" />
                         <p className="mt-1 text-lg font-black text-white">
                           {Math.round((selectedProperty.beds * selectedProperty.occupancy) / 100)}
                         </p>
                         <p className="text-[10px] text-slate-400 uppercase font-semibold">Tenants</p>
                       </div>
 
-                      <div className="rounded-2xl border border-violet-900/40 bg-white/5 p-3 text-center">
+                      <div className="rounded-2xl border border-emerald-900/40 bg-white/5 p-3 text-center">
                         <ShieldCheck className="mx-auto h-5 w-5 text-emerald-400" />
                         <p className="mt-1 text-lg font-black text-white">0%</p>
                         <p className="text-[10px] text-slate-400 uppercase font-semibold">Disputes</p>
@@ -161,7 +161,7 @@ export default function ThreeDPropertyShowcase() {
                       {selectedProperty.amenities.map((amenity) => (
                         <span
                           key={amenity}
-                          className="rounded-lg border border-violet-800/40 bg-white/5 px-2.5 py-1 text-xs text-slate-300"
+                          className="rounded-lg border border-emerald-800/40 bg-white/5 px-2.5 py-1 text-xs text-slate-300"
                         >
                           ✓ {amenity}
                         </span>
@@ -173,9 +173,9 @@ export default function ThreeDPropertyShowcase() {
                   <div className="lg:col-span-5 flex flex-col items-center justify-center">
                     <div
                       style={{ transform: "translateZ(35px)" }}
-                      className="w-full rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-violet-500/10 to-transparent p-6 text-center shadow-lg"
+                      className="w-full rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 via-emerald-500/10 to-transparent p-6 text-center shadow-lg"
                     >
-                      <p className="text-xs font-bold uppercase tracking-wider text-amber-300">
+                      <p className="text-xs font-bold uppercase tracking-wider text-cyan-300">
                         Average Property Rate
                       </p>
                       <p className="mt-2 text-3xl sm:text-4xl font-black text-white">

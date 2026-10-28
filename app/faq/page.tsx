@@ -38,11 +38,11 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">FAQ</p>
-            <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">
+            <div className="inline-flex items-center rounded-full bg-[#E6F7F0] px-3.5 py-1 text-xs font-bold text-[#00A859] mb-3">FAQ</div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0B2545] mt-2">
               Frequently Asked Questions
             </h1>
           </div>
