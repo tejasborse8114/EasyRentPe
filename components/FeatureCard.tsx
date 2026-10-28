@@ -28,24 +28,24 @@ export default function FeatureCard({
       <ThreeDTiltCard maxTilt={12} scale={1.03} className="h-full">
         <div
           style={{ transformStyle: "preserve-3d" }}
-          className="card h-full flex flex-col justify-between border-slate-200/90 bg-white/95 backdrop-blur-md hover:border-primary/50 hover:shadow-card-hover transition-all"
+          className="card h-full flex flex-col justify-between border-white/10 bg-surface-elevated/80 backdrop-blur-md hover:border-primary/50 hover:shadow-glow transition-all"
         >
           <div>
             <div
               style={{ transform: "translateZ(32px)" }}
-              className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 via-primary/5 to-transparent border border-primary/20 shadow-sm text-primary"
+              className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 via-primary/10 to-transparent border border-primary/30 shadow-md text-[#3B82F6]"
             >
               {icon}
             </div>
             <h3
               style={{ transform: "translateZ(22px)" }}
-              className="mt-4 text-lg font-bold text-ink"
+              className="mt-4 text-lg font-bold text-white"
             >
               {title}
             </h3>
             <p
               style={{ transform: "translateZ(14px)" }}
-              className="mt-2 text-sm text-ink-muted leading-relaxed"
+              className="mt-2 text-sm text-slate-400 leading-relaxed"
             >
               {description}
             </p>

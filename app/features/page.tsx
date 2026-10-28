@@ -31,7 +31,7 @@ export default function FeaturesPage() {
             <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">
               Everything you need to run a hostel or PG
             </h1>
-            <p className="mt-4 text-lg text-ink-muted">
+            <p className="mt-4 text-lg text-slate-300">
               One platform covering every part of day-to-day operations — from onboarding
               tenants to collecting rent and resolving complaints.
             </p>
@@ -41,17 +41,17 @@ export default function FeaturesPage() {
             {FEATURE_CATEGORIES.map((category, index) => {
               const Icon = FEATURE_CATEGORY_ICONS[index];
               return (
-                <div key={category.heading} className="card h-full">
+                <div key={category.heading} className="card h-full border border-white/10 bg-surface-elevated/80 backdrop-blur-xl">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
-                      <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/20 text-[#3B82F6]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
-                    <h2 className="text-lg font-semibold text-ink">{category.heading}</h2>
+                    <h2 className="text-lg font-semibold text-white">{category.heading}</h2>
                   </div>
                   <ul className="mt-5 space-y-3">
                     {category.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-ink-muted">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                      <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent font-bold" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
                     ))}

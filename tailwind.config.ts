@@ -10,22 +10,22 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#0055D4", // EasyRentPe Official Royal Blue
-          light: "#2563EB",   // Vibrant Sapphire Blue
-          dark: "#0040A8",
+          DEFAULT: "#8B5CF6", // Electric Violet (Raycast / Solana high-tech)
+          light: "#A78BFA",   // Luminous Soft Lavender
+          dark: "#6D28D9",   // Deep Royal Amethyst
         },
         accent: {
-          DEFAULT: "#00A859", // EasyRentPe Official Emerald Green
-          light: "#10B981",   // Fresh Mint Emerald
-          dark: "#047857",
+          DEFAULT: "#F59E0B", // Radiant Solar Amber / Gold
+          light: "#FBBF24",   // Sunbeam Yellow-Gold
+          dark: "#D97706",   // Warm Bronze Amber
         },
         surface: {
-          DEFAULT: "#F8FAFC", // Clean Crisp Light Slate-50 Base
-          elevated: "#FFFFFF", // Pure Diamond White Card
+          DEFAULT: "#06040A", // Deep Void Obsidian (Space black with faint violet undertone)
+          elevated: "#0E0A18", // Dark Amethyst Slate Card
         },
         ink: {
-          DEFAULT: "#0F172A", // Deep Obsidian Slate-900 (High-Contrast Readability)
-          muted: "#475569",   // Refined Slate-600
+          DEFAULT: "#F8FAFC", // Brilliant Pure White
+          muted: "#94A3B8",   // Refined Silver Slate-400
         },
       },
       fontFamily: {
@@ -44,22 +44,23 @@ const config: Config = {
         "3xl": "2rem",
       },
       boxShadow: {
-        soft: "0 10px 40px -10px rgba(15, 23, 42, 0.08)",
-        card: "0 2px 14px -2px rgba(15, 23, 42, 0.06), 0 0 1px 1px rgba(15, 23, 42, 0.04)",
-        glow: "0 14px 34px -8px rgba(0, 85, 212, 0.28)", // Royal Blue Glow
-        "glow-accent": "0 14px 34px -8px rgba(0, 168, 89, 0.26)", // Emerald Glow
-        "glow-primary": "0 14px 34px -8px rgba(0, 85, 212, 0.28)",
+        soft: "0 10px 40px -10px rgba(0, 0, 0, 0.6)",
+        card: "0 8px 32px 0 rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(139, 92, 246, 0.12)",
+        "card-hover": "0 16px 40px -8px rgba(0, 0, 0, 0.75), 0 0 1px 1px rgba(139, 92, 246, 0.3)",
+        glow: "0 0 35px -5px rgba(139, 92, 246, 0.5)",
+        "glow-accent": "0 0 35px -5px rgba(245, 158, 11, 0.45)",
+        "glow-primary": "0 0 35px -5px rgba(139, 92, 246, 0.5)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(circle, var(--tw-gradient-stops))",
-        "clean-light":
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,85,212,0.06), transparent 70%), radial-gradient(ellipse 60% 40% at 90% 30%, rgba(0,168,89,0.05), transparent 60%), radial-gradient(ellipse 60% 40% at 10% 70%, rgba(37,99,235,0.05), transparent 60%)",
+        "cyber-dark":
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139,92,246,0.18), transparent 70%), radial-gradient(ellipse 60% 40% at 85% 25%, rgba(245,158,11,0.12), transparent 60%), radial-gradient(ellipse 60% 40% at 15% 75%, rgba(124,58,237,0.14), transparent 60%)",
         "dot-matrix":
-          "radial-gradient(rgba(15, 23, 42, 0.07) 1.2px, transparent 1.2px)",
+          "radial-gradient(rgba(167, 139, 250, 0.12) 1.2px, transparent 1.2px)",
         "hero-mesh":
-          "radial-gradient(ellipse 70% 50% at 20% 10%, rgba(0,85,212,0.08), transparent 60%), radial-gradient(ellipse 60% 40% at 85% 15%, rgba(0,168,89,0.07), transparent 60%)",
+          "radial-gradient(ellipse 70% 50% at 20% 10%, rgba(139,92,246,0.22), transparent 60%), radial-gradient(ellipse 60% 40% at 85% 15%, rgba(245,158,11,0.18), transparent 60%)",
         "noise":
-          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E\")",
+          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E\")",
       },
       keyframes: {
         float: {

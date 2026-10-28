@@ -27,7 +27,7 @@ export default function MarqueeTicker({
     speed === "fast" ? "duration-[18s]" : speed === "slow" ? "duration-[45s]" : "duration-[30s]";
 
   return (
-    <div className="relative w-full overflow-hidden border-y border-slate-200/90 bg-white/80 py-3 sm:py-4 backdrop-blur-md select-none">
+    <div className="relative w-full overflow-hidden border-y border-white/10 bg-[#07090E]/80 py-3 sm:py-4 backdrop-blur-md select-none">
       {/* Side gradient fades */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 sm:w-24 bg-gradient-to-r from-surface to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 sm:w-24 bg-gradient-to-l from-surface to-transparent" />
@@ -44,12 +44,12 @@ export default function MarqueeTicker({
               className={`text-xs sm:text-base font-extrabold uppercase tracking-widest ${
                 i % 2 === 0
                   ? "gradient-text"
-                  : "text-slate-800"
+                  : "text-slate-200"
               }`}
             >
               {text}
             </span>
-            <span className="text-primary text-xs sm:text-sm animate-spin-slow">✦</span>
+            <span className="text-accent text-xs sm:text-sm animate-spin-slow">✦</span>
           </div>
         ))}
       </div>

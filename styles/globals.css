@@ -5,22 +5,23 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    @apply relative bg-surface bg-clean-light bg-fixed text-ink antialiased selection:bg-primary/20;
+    @apply relative bg-surface bg-cyber-dark bg-fixed text-ink antialiased selection:bg-primary/30 selection:text-white;
   }
 
-  /* Clean ambient dot-matrix grid */
+  /* Ambient lavender-violet dot-matrix grid */
   body::before {
     content: "";
-    @apply pointer-events-none fixed inset-0 z-0 bg-dot-matrix bg-[length:32px_32px] opacity-60;
+    @apply pointer-events-none fixed inset-0 z-0 bg-dot-matrix bg-[length:32px_32px] opacity-45;
   }
 
-  /* Subtle micro-texture */
+  /* Subtle noise micro-texture */
   body::after {
     content: "";
-    @apply pointer-events-none fixed inset-0 z-0 bg-noise opacity-[0.015];
+    @apply pointer-events-none fixed inset-0 z-0 bg-noise opacity-[0.02];
   }
 
   :focus-visible {
@@ -34,11 +35,11 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0055D4] via-blue-600 to-[#00A859] px-6 py-3 text-sm font-bold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_16px_36px_-6px_rgba(0,85,212,0.45)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#7C3AED] via-[#8B5CF6] to-[#F59E0B] px-6 py-3 text-sm font-bold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(245,158,11,0.55)] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200/90 bg-white/95 px-6 py-3 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-slate-300 hover:bg-slate-50 active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-violet-500/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white shadow-sm backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.02] hover:border-violet-400/50 hover:bg-white/10 active:scale-[0.98];
   }
 
   .section {
@@ -46,18 +47,18 @@
   }
 
   .card {
-    @apply rounded-2xl border border-slate-200/80 bg-white/95 p-4 sm:p-6 shadow-[0_2px_14px_-2px_rgba(15,23,42,0.06),0_0_1px_1px_rgba(15,23,42,0.04)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/40 hover:shadow-glow;
+    @apply rounded-2xl border border-violet-900/30 bg-surface-elevated/85 p-4 sm:p-6 shadow-card backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:border-primary/50 hover:shadow-glow;
   }
 
   .eyebrow {
-    @apply text-sm font-bold uppercase tracking-wider text-primary;
+    @apply text-sm font-bold uppercase tracking-wider text-accent;
   }
 
   .gradient-text {
-    @apply animate-gradient-x bg-[length:200%_auto] bg-gradient-to-r from-[#0055D4] via-indigo-600 to-[#00A859] bg-clip-text text-transparent;
+    @apply animate-gradient-x bg-[length:200%_auto] bg-gradient-to-r from-[#A78BFA] via-[#C084FC] to-[#FBBF24] bg-clip-text text-transparent font-extrabold;
   }
 
   .glow-orb {
-    @apply pointer-events-none absolute animate-pulse-glow rounded-full blur-3xl opacity-50;
+    @apply pointer-events-none absolute animate-pulse-glow rounded-full blur-3xl opacity-60;
   }
 }

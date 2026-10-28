@@ -57,10 +57,10 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/90 px-3.5 py-1.5 text-xs font-bold tracking-wider text-primary uppercase shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-semibold tracking-wider text-accent uppercase backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
             </span>
             <span>#1 SMART PG &amp; HOSTEL PLATFORM</span>
           </div>
@@ -85,7 +85,7 @@ export default function HomePage() {
                     <Star key={i} className="h-4 w-4 fill-amber-400" aria-hidden="true" />
                   ))}
                 </div>
-                <span className="font-semibold text-ink">4.9/5</span>
+                <span className="font-semibold text-white">4.9/5</span>
                 <span>(500+ PG owners)</span>
               </div>
               <div className="flex items-center gap-1.5">
@@ -100,7 +100,7 @@ export default function HomePage() {
 
             {/* Store badges */}
             <div className="pt-1">
-              <p className="mb-2.5 text-xs font-medium uppercase tracking-wider text-ink-muted">
+              <p className="mb-2.5 text-xs font-medium uppercase tracking-wider text-slate-400">
                 Available on Mobile &amp; Web
               </p>
               <StoreBadges />
@@ -126,7 +126,7 @@ export default function HomePage() {
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Sound familiar?</p>
-            <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
               From daily chaos to a single dashboard
             </h2>
           </div>
@@ -151,11 +151,11 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="section border-y border-slate-200/80 bg-white">
+      <section className="section border-y border-white/10 bg-surface-elevated/70">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Everything you need</p>
-            <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
               Feature highlights
             </h2>
           </div>
@@ -209,7 +209,7 @@ export default function HomePage() {
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Getting started</p>
-            <h2 className="mt-3 text-3xl font-bold text-ink sm:text-4xl">How it works</h2>
+            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">How it works</h2>
           </div>
           <div className="mt-12">
             <StepsList steps={HOME_STEPS} />
@@ -221,9 +221,9 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container-page">
-          <div className="card mx-auto flex max-w-3xl flex-col items-center gap-4 text-center border border-slate-200 bg-white shadow-card">
+          <div className="card mx-auto flex max-w-3xl flex-col items-center gap-4 text-center border border-white/10 bg-surface-elevated/90 shadow-card">
             <p className="eyebrow">Pricing</p>
-            <h2 className="text-2xl font-bold text-ink sm:text-3xl">
+            <h2 className="text-2xl font-bold text-white sm:text-3xl">
               Simple, per-bed pricing. No flat platform fees.
             </h2>
             <Link href="/pricing" className="btn-secondary">

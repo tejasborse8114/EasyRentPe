@@ -30,7 +30,7 @@ export default function ContactPage() {
           <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">
             See Easy RentPe in Action
           </h1>
-          <p className="mt-4 text-lg text-ink-muted">
+          <p className="mt-4 text-lg text-slate-300">
             Tell us about your property and we&apos;ll set up a personalized walkthrough.
           </p>
         </div>

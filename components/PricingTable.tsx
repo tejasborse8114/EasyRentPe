@@ -15,24 +15,24 @@ export default function PricingTable({ plans }: { plans: PricingPlan[] }) {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className={`card flex h-full flex-col border border-slate-200 bg-white transition-all ${
+          className={`card flex h-full flex-col border border-white/10 bg-surface-elevated/90 backdrop-blur-xl transition-all ${
             plan.highlighted
-              ? "scale-[1.02] border-2 border-primary shadow-xl ring-4 ring-primary/10"
+              ? "scale-[1.02] border-2 border-[#3B82F6] shadow-glow ring-2 ring-[#3B82F6]/30"
               : "shadow-card hover:shadow-card-hover"
           }`}
         >
           {plan.highlighted && (
-            <span className="mb-3 inline-block w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary border border-blue-200/80">
+            <span className="mb-3 inline-block w-fit rounded-full bg-blue-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wide text-blue-300 border border-blue-500/40">
               Most popular
             </span>
           )}
-          <h3 className="text-xl font-bold text-slate-900">{plan.name}</h3>
-          <p className="mt-1 text-sm text-slate-600">{plan.bestFor}</p>
+          <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+          <p className="mt-1 text-sm text-slate-400">{plan.bestFor}</p>
 
           <ul className="mt-6 flex-1 space-y-3">
             {plan.included.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden="true" />
+              <li key={item} className="flex items-start gap-2 text-sm text-slate-300">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
                 <span>{item}</span>
               </li>
             ))}

@@ -31,7 +31,7 @@ export default function HowItWorksPage() {
             <h1 className="gradient-text mt-3 text-4xl font-bold sm:text-5xl">
               Get up and running in a few simple steps
             </h1>
-            <p className="mt-4 text-lg text-ink-muted">
+            <p className="mt-4 text-lg text-slate-300">
               From adding your first property to scaling with a team of managers.
             </p>
           </div>

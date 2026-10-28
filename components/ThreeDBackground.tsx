@@ -33,20 +33,21 @@ export default function ThreeDBackground() {
     };
     window.addEventListener("resize", handleResize);
 
-    // Responsive 3D particle simulation constants (lower count on mobile for 60fps & battery saving)
+    // Responsive 3D particle simulation constants
     const isMobile = window.innerWidth < 640;
-    const PARTICLE_COUNT = isMobile ? 26 : 55;
+    const PARTICLE_COUNT = isMobile ? 28 : 60;
     const FOCAL_LENGTH = isMobile ? 300 : 380;
     const BOUND_X = isMobile ? 320 : 520;
     const BOUND_Y = isMobile ? 240 : 320;
     const BOUND_Z = isMobile ? 300 : 400;
 
-    // Clean Minimalist Light Palette: Royal Blue, Sapphire, Emerald & Mint
+    // Deep Void Violet & Solar Amber Palette
     const colors = [
-      "rgba(0, 85, 212, ",   // EasyRentPe Royal Blue
-      "rgba(37, 99, 235, ",  // Electric Sapphire
-      "rgba(0, 168, 89, ",   // EasyRentPe Emerald Green
-      "rgba(16, 185, 129, ", // Mint Green
+      "rgba(139, 92, 246, ",  // Electric Violet
+      "rgba(167, 139, 250, ", // Luminous Lavender
+      "rgba(245, 158, 11, ",  // Solar Amber
+      "rgba(251, 191, 36, ",  // Radiant Sun Gold
+      "rgba(192, 132, 252, ", // Amethyst Light
     ];
 
     const particles: Particle3D[] = [];
@@ -131,7 +132,7 @@ export default function ThreeDBackground() {
         const projY = height / 2 + y2 * scale;
 
         // Depth alpha fade
-        const alpha = Math.min(0.85, Math.max(0.15, (scale - 0.4) * 1.5));
+        const alpha = Math.min(0.9, Math.max(0.18, (scale - 0.35) * 1.6));
 
         projected.push({
           x: projX,
@@ -145,7 +146,7 @@ export default function ThreeDBackground() {
       }
 
       // Draw connection lines in 3D
-      const maxDistance = isMobile ? 85 : 115;
+      const maxDistance = isMobile ? 85 : 120;
       for (let i = 0; i < projected.length; i++) {
         for (let j = i + 1; j < projected.length; j++) {
           const p1 = projected[i];
@@ -155,11 +156,11 @@ export default function ThreeDBackground() {
           const dist = Math.hypot(dx, dy);
 
           if (dist < maxDistance) {
-            const lineAlpha = (1 - dist / maxDistance) * Math.min(p1.alpha, p2.alpha) * 0.22;
+            const lineAlpha = (1 - dist / maxDistance) * Math.min(p1.alpha, p2.alpha) * 0.28;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 85, 212, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(139, 92, 246, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
@@ -170,10 +171,10 @@ export default function ThreeDBackground() {
       for (let i = 0; i < projected.length; i++) {
         const p = projected[i];
         ctx.beginPath();
-        ctx.arc(p.x, p.y, Math.max(0.7, p.radius), 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, Math.max(0.8, p.radius), 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${p.alpha})`;
-        ctx.shadowColor = p.color.includes("0, 168, 89") || p.color.includes("16, 185, 129") ? "#00A859" : "#0055D4";
-        ctx.shadowBlur = p.scale * 6;
+        ctx.shadowColor = p.color.includes("245") || p.color.includes("251") ? "#F59E0B" : "#8B5CF6";
+        ctx.shadowBlur = p.scale * 8;
         ctx.fill();
       }
       ctx.shadowBlur = 0; // Reset shadow
@@ -193,7 +194,7 @@ export default function ThreeDBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-60"
+      className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-80"
       aria-hidden="true"
     />
   );
