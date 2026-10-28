@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { NAV_LINKS } from "@/lib/site";
 import { SITE_NAME } from "@/lib/site";
+import StoreBadges from "@/components/StoreBadges";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -106,10 +107,16 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="btn-primary w-full"
+                className="btn-primary w-full text-center"
               >
                 Book a Free Demo
               </Link>
+            </li>
+            <li className="pt-4 border-t border-violet-900/40 mt-2">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+                Download Mobile App
+              </p>
+              <StoreBadges />
             </li>
           </ul>
         </div>

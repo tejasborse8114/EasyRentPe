@@ -4,8 +4,8 @@ export const SITE_URL = "https://easyrentpe.com";
 
 export const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.easyrentpe.hostel_management_app";
-// TODO: replace with the live App Store listing URL once published.
-export const APP_STORE_URL = "https://play.google.com/store/apps/details?id=com.easyrentpe.hostel_management_app";
+// Official live Apple App Store & Google Play Store links
+export const APP_STORE_URL = "https://apps.apple.com/in/app/easy-rentpe/id6826558602";
 
 export const WHATSAPP_NUMBER = "919175232737";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

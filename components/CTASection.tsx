@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import StoreBadges from "@/components/StoreBadges";
 
 type CTASectionProps = {
   heading: string;
@@ -33,11 +34,17 @@ export default function CTASection({
           {subheading && (
             <p className="relative mx-auto mt-3 max-w-xl text-slate-300">{subheading}</p>
           )}
-          <div className="relative mt-8">
+          <div className="relative mt-8 flex flex-col items-center gap-6">
             <Link href={ctaHref} className="btn-primary">
               {ctaLabel}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
+            <div className="flex flex-col items-center gap-2.5 pt-3 border-t border-violet-500/20 max-w-sm w-full">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                Or download directly for iOS &amp; Android
+              </span>
+              <StoreBadges />
+            </div>
           </div>
         </motion.div>
       </div>
