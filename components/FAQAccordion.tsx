@@ -9,7 +9,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-surface-elevated/90 shadow-2xl overflow-hidden backdrop-blur-xl">
+    <div className="divide-y divide-violet-900/30 rounded-2xl border border-violet-900/30 bg-surface-elevated/90 shadow-2xl overflow-hidden backdrop-blur-xl">
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         const panelId = `faq-panel-${index}`;
@@ -28,7 +28,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
               >
                 <span className="text-base font-semibold text-white">{item.question}</span>
                 <ChevronDown
-                  className={`h-5 w-5 shrink-0 text-[#3B82F6] transition-transform duration-200 ${
+                  className={`h-5 w-5 shrink-0 text-[#A78BFA] transition-transform duration-200 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"

@@ -25,7 +25,7 @@ export default function CTASection({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-900/80 via-indigo-950 to-[#07090E] border border-blue-500/30 px-6 py-14 text-center shadow-glow sm:px-12"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#2E1065] via-[#1E1B4B] to-[#06040A] border border-violet-500/30 px-6 py-14 text-center shadow-glow sm:px-12"
         >
           <div className="glow-orb -left-16 -top-16 h-56 w-56 bg-accent/25" aria-hidden="true" />
           <div className="glow-orb -bottom-16 -right-16 h-56 w-56 bg-primary/25 animate-float-delayed" aria-hidden="true" />

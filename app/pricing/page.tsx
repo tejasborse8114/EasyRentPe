@@ -36,7 +36,7 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-primary/30 bg-primary/10 p-6 text-center shadow-glow backdrop-blur-xl">
+          <div className="mx-auto mt-10 max-w-xl rounded-2xl border border-violet-500/30 bg-violet-500/10 p-6 text-center shadow-glow backdrop-blur-xl">
             <p className="text-3xl font-bold text-white">
               ₹25<span className="text-base font-medium text-slate-400"> / Bed</span>
             </p>

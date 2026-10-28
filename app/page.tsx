@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Wallet,
-  QrCode,
   ShieldCheck,
   FileText,
   UserCheck,
@@ -17,7 +15,6 @@ import FeatureGrid from "@/components/FeatureGrid";
 import FeatureSpotlight from "@/components/FeatureSpotlight";
 import MiniAppMockup from "@/components/MiniAppMockup";
 import ComparisonTable from "@/components/ComparisonTable";
-import PropertyTypesShowcase from "@/components/PropertyTypesShowcase";
 import StatsBar from "@/components/StatsBar";
 import StepsList from "@/components/StepsList";
 import Testimonials from "@/components/Testimonials";
@@ -25,12 +22,14 @@ import CTASection from "@/components/CTASection";
 import StoreBadges from "@/components/StoreBadges";
 import MarqueeTicker from "@/components/MarqueeTicker";
 import InteractiveBentoShowcase from "@/components/InteractiveBentoShowcase";
+import ThreeDBuildingModel from "@/components/ThreeDBuildingModel";
+import ThreeDRentCard from "@/components/ThreeDRentCard";
+import ThreeDPropertyShowcase from "@/components/ThreeDPropertyShowcase";
 import {
   HOME_FEATURES,
   HOME_STEPS,
   PROBLEM_SOLUTIONS,
   FEATURE_CATEGORIES,
-  PROPERTY_TYPES,
   STATS,
 } from "@/lib/content";
 
@@ -57,7 +56,7 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow={
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3.5 py-1.5 text-xs font-semibold tracking-wider text-accent uppercase backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-3.5 py-1.5 text-xs font-bold tracking-wider text-[#A78BFA] uppercase backdrop-blur-sm shadow-sm">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
@@ -115,9 +114,29 @@ export default function HomePage() {
       {/* Interactive 3D Bento Grid */}
       <InteractiveBentoShowcase />
 
+      {/* Flagship Interactive 3D Building Digital Twin */}
+      <section className="section relative overflow-hidden bg-gradient-to-b from-transparent via-[#0B0616]/70 to-transparent py-16 sm:py-24">
+        <div className="container-page">
+          <div className="mx-auto max-w-3xl text-center mb-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#A78BFA] mb-4">
+              <span>Next-Gen PG Visualization</span>
+            </div>
+            <h2 className="text-3xl font-extrabold text-white sm:text-5xl">
+              Live 3D Digital Twin of <span className="gradient-text">Your Properties</span>
+            </h2>
+            <p className="mt-4 text-base text-slate-400 sm:text-lg">
+              Rotate, explode floors, and inspect bed occupancy in real-time 3D space. Never manage your hostel from a blind spreadsheet again.
+            </p>
+          </div>
+          <ThreeDBuildingModel />
+        </div>
+      </section>
+
+      {/* 3D Multi-Property Showcase (Co-Living, Hostels, Executive PGs) */}
+      <ThreeDPropertyShowcase />
+
       <section className="pb-16 pt-8">
         <div className="container-page space-y-10">
-          <PropertyTypesShowcase types={PROPERTY_TYPES} />
           <StatsBar stats={STATS} />
         </div>
       </section>
@@ -151,7 +170,7 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="section border-y border-white/10 bg-surface-elevated/70">
+      <section className="section border-y border-violet-900/30 bg-surface-elevated/70">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Everything you need</p>
@@ -169,19 +188,7 @@ export default function HomePage() {
               title="Get paid on time, every time"
               description="Every property is ready to collect rent instantly — tenants pay via UPI or Cash directly, and every payment is verified before it's marked received."
               bullets={FEATURE_CATEGORIES.find((c) => c.heading === "Payments & Rent")!.items}
-              visual={
-                <MiniAppMockup
-                  title="Rent Collection"
-                  rows={[
-                    { icon: <Wallet className="h-4 w-4 text-accent" aria-hidden="true" />, label: "UPI & Cash payments accepted" },
-                    { icon: <QrCode className="h-4 w-4 text-accent" aria-hidden="true" />, label: "Default UPI ID / QR per property" },
-                    {
-                      icon: <ShieldCheck className="h-4 w-4 text-accent" aria-hidden="true" />,
-                      label: "Owner verification before marking paid",
-                    },
-                  ]}
-                />
-              }
+              visual={<ThreeDRentCard />}
             />
 
             <FeatureSpotlight
@@ -221,7 +228,7 @@ export default function HomePage() {
 
       <section className="section">
         <div className="container-page">
-          <div className="card mx-auto flex max-w-3xl flex-col items-center gap-4 text-center border border-white/10 bg-surface-elevated/90 shadow-card">
+          <div className="card mx-auto flex max-w-3xl flex-col items-center gap-4 text-center border border-violet-900/30 bg-surface-elevated/90 shadow-card">
             <p className="eyebrow">Pricing</p>
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
               Simple, per-bed pricing. No flat platform fees.

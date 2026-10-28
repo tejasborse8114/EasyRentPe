@@ -58,8 +58,8 @@ export default function DemoForm() {
 
   if (submitted) {
     return (
-      <div className="card flex flex-col items-center gap-3 py-12 text-center border border-white/10 bg-surface-elevated/90 shadow-2xl backdrop-blur-xl">
-        <CheckCircle2 className="h-10 w-10 text-emerald-400" aria-hidden="true" />
+      <div className="card flex flex-col items-center gap-3 py-12 text-center border border-violet-900/30 bg-surface-elevated/90 shadow-2xl backdrop-blur-xl">
+        <CheckCircle2 className="h-10 w-10 text-amber-400" aria-hidden="true" />
         <h3 className="text-xl font-bold text-white">Thanks! Our team will reach out within one business day.</h3>
         <button
           type="button"
@@ -73,10 +73,10 @@ export default function DemoForm() {
   }
 
   const inputClass =
-    "mt-1.5 w-full rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-base sm:text-sm text-white placeholder:text-slate-500 focus:bg-white/10 focus:border-[#3B82F6] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 transition-all";
+    "mt-1.5 w-full rounded-xl border border-violet-900/40 bg-white/5 px-4 py-2.5 text-base sm:text-sm text-white placeholder:text-slate-500 focus:bg-white/10 focus:border-[#8B5CF6] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6]/30 transition-all";
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="card space-y-5 border border-white/10 bg-surface-elevated/90 shadow-2xl backdrop-blur-xl">
+    <form onSubmit={handleSubmit(onSubmit)} noValidate className="card space-y-5 border border-violet-900/30 bg-surface-elevated/90 shadow-2xl backdrop-blur-xl">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="fullName" className="block text-sm font-semibold text-slate-200">

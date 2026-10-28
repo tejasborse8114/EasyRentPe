@@ -41,9 +41,9 @@ export default function FeaturesPage() {
             {FEATURE_CATEGORIES.map((category, index) => {
               const Icon = FEATURE_CATEGORY_ICONS[index];
               return (
-                <div key={category.heading} className="card h-full border border-white/10 bg-surface-elevated/80 backdrop-blur-xl">
+                <div key={category.heading} className="card h-full border border-violet-900/30 bg-surface-elevated/80 backdrop-blur-xl hover:border-violet-500/40 transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/20 text-[#3B82F6]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/20 text-[#A78BFA] border border-violet-500/30">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <h2 className="text-lg font-semibold text-white">{category.heading}</h2>

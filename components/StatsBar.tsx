@@ -10,7 +10,7 @@ export default function StatsBar({ stats }: { stats: Stat[] }) {
     <ThreeDTiltCard maxTilt={6} scale={1.01} className="w-full">
       <div
         style={{ transformStyle: "preserve-3d" }}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 overflow-hidden rounded-3xl border border-white/15 shadow-glow"
+        className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-violet-900/30 overflow-hidden rounded-3xl border border-violet-900/40 shadow-glow"
       >
         {stats.map((stat, index) => (
           <motion.div
